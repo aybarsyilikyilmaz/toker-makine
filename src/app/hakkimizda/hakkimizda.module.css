@@ -1,0 +1,62 @@
+.main {
+  padding-top: 75px; 
+}
+
+.centeredTitle {
+  color: var(--primary-red) !important;
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin-bottom: 0.5rem;
+}
+
+.plainContent {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.aboutBlock {
+  position: relative;
+}
+
+.blockInner {
+  border-left: 6px solid var(--primary-red);
+  padding-left: 30px;
+  transition: all 0.3s ease;
+}
+
+.aboutBlock:hover .blockInner {
+  border-left-width: 10px;
+  background-color: rgba(227, 6, 19, 0.02); /* Very subtle red tint on hover */
+}
+
+.aboutBlock h2 {
+  font-size: 2.2rem;
+  color: var(--navy);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.aboutBlock p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.aboutBlock p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+  .centeredTitle { font-size: 2.5rem; }
+  .aboutBlock h2 { font-size: 1.8rem; }
+  .blockInner { padding-left: 20px; border-left-width: 4px; }
+}

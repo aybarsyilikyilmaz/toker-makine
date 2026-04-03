@@ -1,0 +1,142 @@
+.main {
+  padding-top: 75px; 
+}
+
+.centeredTitle {
+  color: var(--primary-red) !important;
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin-bottom: 0.5rem;
+}
+
+.contactSplit {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.contactSides {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contactBlock {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.redBar {
+  width: 6px;
+  background-color: var(--primary-red);
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.blockContent {
+  padding: 5px 0;
+  width: 100%;
+}
+
+.blockContent h3 {
+  font-size: 1.25rem;
+  color: var(--navy);
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+
+.inlineAction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.inlineAction:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.inlineAction p {
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+.linkAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-red);
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: 1px;
+}
+
+.linkAction:hover {
+  text-decoration: underline;
+}
+
+/* Map Wrapper */
+.mapWrapper {
+  flex: 1;
+  width: 100%;
+}
+
+.mapBorder {
+  height: 500px;
+  border: 10px solid var(--primary-red);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(227, 6, 19, 0.15);
+  background-color: var(--primary-red);
+}
+
+.hoursInfo {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #F8F9FA;
+  padding: 15px 25px;
+  border-radius: 10px;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 992px) {
+  .contactSplit {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .mapBorder {
+    height: 400px;
+    border-width: 6px;
+  }
+  .mapWrapper {
+    order: -1;
+  }
+  .centeredTitle { font-size: 2.5rem; }
+  .inlineAction {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

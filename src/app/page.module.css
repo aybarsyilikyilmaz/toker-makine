@@ -1,142 +1,351 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+/* Global Transitions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.main {
+.hero {
+  position: relative;
+  height: 100vh;
   display: flex;
-  flex: 1;
+  align-items: flex-start;
+  overflow: hidden;
+  padding-top: 155px;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  height: 100%;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  color: var(--white);
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   text-align: left;
-  gap: 24px;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.heroContent h1 {
+  color: var(--white);
+  font-size: 3.2rem;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+.heroContent h1 span {
+  color: var(--primary-red);
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+.heroContent p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
 }
 
-.ctas {
+.heroCta {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+  gap: 1rem;
 }
 
-.ctas a {
+/* Trust Badges */
+.trustSection {
+  padding: 0;
+  position: relative;
+  z-index: 20;
+  margin-top: -110px; 
+}
+
+.trustGrid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+  background-color: #FFFFFF;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border-bottom: 4px solid var(--primary-red);
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.symbolWrapper {
+  width: 55px;
+  height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
+  flex-shrink: 0;
+}
+
+.symbolWrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.trustTitle {
+  color: var(--navy) !important;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.trustText {
+  font-size: 0.82rem;
+  color: #444 !important;
+  margin: 0;
+}
+
+/* Makine Parkuru Gallery */
+.machineGallery {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+.machineGroup {
+  width: 100%;
+}
+
+.groupTitle {
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 25px;
+  padding-left: 15px;
+  border-left: 4px solid var(--primary-red);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.machineGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.machineCard {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid #F0F0F0;
+}
+
+.machineCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary-red);
+}
+
+.machineImageWrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background-color: #F9F9F9;
+}
+
+.machineImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.machineCard:hover .machineImage {
+  transform: scale(1.1);
+}
+
+.noImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #F5F5F5 0%, #EEEEEE 100%);
+  color: #BBB;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(227, 6, 19, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.machineCard:hover .cardOverlay {
+  opacity: 1;
+}
+
+.cardOverlay p {
+  color: var(--white) !important;
+  text-align: center;
+  font-size: 0.95rem;
   font-weight: 500;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.machineCard:hover .cardOverlay p {
+  transform: translateY(0);
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.machineInfo {
+  padding: 20px;
+  border-top: 1px solid #F0F0F0;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.machineInfo h4 {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Referans Logo Grid */
+.logoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  width: 100%;
+}
+
+.logoWrapper {
+  background-color: #FFF;
+  height: 110px;
+  width: 210px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  border: 1px solid #F0F0F0;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  margin: 5px;
+}
+
+.logoWrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-color: var(--primary-red);
+}
+
+.referenceLogo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: all 0.4s ease;
+}
+
+.logoWrapper:hover .referenceLogo {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .trustSection {
+    margin-top: 40px !important;
+    padding: 0 15px;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .trustGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 25px;
+  }
+
+  .trustItem {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .symbolWrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .heroContent h1 {
+    font-size: 2.2rem;
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+@media (max-width: 768px) {
+  .machineGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .machineImageWrapper {
+    height: 200px;
+  }
+  
+  .groupTitle {
+    font-size: 1.25rem;
   }
 
-  .intro {
-    gap: 16px;
+  .logoGrid {
+    gap: 15px;
   }
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+  .logoWrapper {
+    height: 80px;
+    width: 160px;
+    padding: 15px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+@media (max-width: 480px) {
+  .trustGrid {
+    grid-template-columns: 1fr;
   }
 }
