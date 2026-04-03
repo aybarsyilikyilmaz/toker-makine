@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     siteName: 'Toker Teknik',
     images: [
       {
-        url: '/service_machining_main_1775092191414.png', // Artifact based image
+        url: '/toker-logo.png',
         width: 1200,
         height: 630,
-        alt: 'Toker Teknik Talaşlı İmalat Atölyesi',
+        alt: 'Toker Teknik Logo',
       },
     ],
     locale: 'tr_TR',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Toker Teknik',
     description: 'Hassas talaşlı imalat ve profesyonel makine bakım çözümleri.',
-    images: ['/service_machining_main_1775092191414.png'],
+    images: ['/toker-logo.png'],
   },
 };
 
