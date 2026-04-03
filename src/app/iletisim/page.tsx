@@ -65,8 +65,8 @@ export default function IletisimPage() {
                     <div className={styles.blockContent}>
                         <h3>Dijital İletişim</h3>
                         <div className={styles.inlineAction}>
-                            <p>Mail: tokermakina@gmail.com</p>
-                            <a href="mailto:tokermakina@gmail.com" className={styles.linkAction}>MAIL <ArrowRight size={16} /></a>
+                            <p>Mail: info@tokerteknikmakina.com</p>
+                            <a href="mailto:info@tokerteknikmakina.com" className={styles.linkAction}>MAIL <ArrowRight size={16} /></a>
                         </div>
                     </div>
                 </div>
