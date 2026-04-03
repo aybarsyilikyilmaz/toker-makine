@@ -74,7 +74,7 @@ export default function Footer() {
               <span>0262 646 56 39</span>
             </li>
             <li>
-              <MessageCircle size={20} />
+              <MessageCircle size={20} className="text-red" />
               <a href="https://wa.me/905325721261" target="_blank" rel="noreferrer" className={styles.wpLabel}>0532 572 12 61</a>
             </li>
             <li>
