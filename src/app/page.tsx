@@ -17,7 +17,8 @@ const LOGO_REFERENCES = [
   { name: "Dizayn Mühendislik", logo: "/logos/logo-dizaynmüh.png" },
   { name: "Deka Teknik", logo: "/logos/ldeka-logo.png" },
   { name: "Burgmann Packings", logo: "/logos/bugman-packingslogo.svg" },
-  { name: "CMS Makine", logo: "/logos/cms.png" }
+  { name: "CMS Makine", logo: "/logos/cms.png" },
+  { name: "AkzoNobel", logo: "/logos/logo-akzonobel.webp" }
 ];
 
 const MACHINE_PARKS = [

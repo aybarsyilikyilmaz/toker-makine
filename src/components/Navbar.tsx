@@ -30,6 +30,7 @@ export default function Navbar() {
   const navLinks = [
     { href: '/', label: 'Ana Sayfa' },
     { href: '/hizmetler', label: 'Hizmetler' },
+    { href: '/makine-parkuru', label: 'Makine Parkuru' },
     { href: '/hakkimizda', label: 'Hakkımızda' },
     { href: '/iletisim', label: 'İletişim' }
   ];
