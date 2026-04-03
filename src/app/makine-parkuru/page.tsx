@@ -9,6 +9,20 @@ export const metadata: Metadata = {
 
 const MACHINE_PARKS = [
   {
+    category: "CNC Dik İşleme Merkezleri",
+    items: [
+      { name: "NEWAY CNC Dik İşleme", image: "/images/cnc.jpg", detail: "X:1100 mm / Y:600 mm / Z:600 mm" },
+      { name: "HAAS VF2 CNC İşleme", image: "/images/torna2.jpeg", detail: "X:800 mm / Y:400 mm / Z:500 mm" }
+    ]
+  },
+  {
+    category: "Universal Torna Tezgahları",
+    items: [
+      { name: "Çap 1200 x 5000 Torna", image: "/images/makine1.jpg", detail: "Büyük çaplı ve uzun parça işleme" },
+      { name: "Çap 660 x 3000 Torna", image: "/images/torna-universal.png", detail: "Universal işleme kapasitesi" }
+    ]
+  },
+  {
     category: "Universal Freze, Planya ve Ekipman",
     items: [
       { name: "Universal Freze Tezgahı", image: "/images/freze-yeni.jpg", detail: "Dişli ve kanal açma işlemleri" },
