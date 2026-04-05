@@ -16,6 +16,10 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.tokerteknikmakina.com'),
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/icon.png',
+  },
   title: {
     default: "Toker Teknik | Talaşlı İmalat ve Makine Bakım Hizmetleri",
     template: "%s | Toker Teknik"
