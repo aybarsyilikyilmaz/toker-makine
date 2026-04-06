@@ -10,7 +10,7 @@ const LOGO_REFERENCES = [
   { name: "Farplas", logo: "/logos/logo-farplas-black.svg" },
   { name: "Pulver Kimya", logo: "/logos/pulver-kimya.svg" },
   { name: "Beckers Boya", logo: "/logos/beckers_logo.svg" },
-  { name: "Alfa Kimya", logo: "/logos/alfa-kimya-yeni-logo-300x77.png" },
+  { name: "Alfa Kimya", logo: "/logos/alfa-teknikyeni.png" },
   { name: "Belgin Madeni Yağlar", logo: "/logos/logo-belgin.png" },
   { name: "Belkim Kimya", logo: "/logos/belkim-logo.png" },
   { name: "Işık Plastik", logo: "/logos/isik-plastik.png" },
