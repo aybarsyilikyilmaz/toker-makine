@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function IletisimPage() {
   const address = "Sultan Orhan Mah. Hasköy Sanayi Sitesi NO:11A/15 Gebze / Kocaeli";
-  const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.2319084224734!2d29.414436976646!3d40.8227653294719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb22c4f6b216a9%3A0xe5ed809b02a24aa7!2sSultan%20Orhan%2C%20Hask%C3%B6y%20Sanayi%20Sitesi!5e0!3m2!1str!2str!4v1712011234567!5m2!1str!2str`;
+  const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1509.6!2d29.414!3d40.822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb21694a3d38e3%3A0xb94445842eb25dc3!2sToker%20Teknik%20Makina!5e0!3m2!1str!2str!4v1712011234567!5m2!1str!2str`;
 
   return (
     <main className={styles.main}>
@@ -38,7 +38,7 @@ export default function IletisimPage() {
                         <h3>Merkez Ofis & Atölye</h3>
                         <div className={styles.inlineAction}>
                             <p>{address}</p>
-                            <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`} target="_blank" rel="noreferrer" className={styles.linkAction}>
+                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14cb21694a3d38e3:0xb94445842eb25dc3" target="_blank" rel="noreferrer" className={styles.linkAction}>
                                 KONUM <ArrowRight size={16} />
                             </a>
                         </div>
