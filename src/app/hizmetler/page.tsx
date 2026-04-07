@@ -19,7 +19,7 @@ const SERVICES_DATA = [
       "Tekil parça ve seri imalat",
       "Teknik resme uygun üretim ve revizyon işlemleri"
     ],
-    img: "/images/freze-yeni.jpg"
+    img: "/images/universal-freze-tezgah.jpeg"
   },
   {
     title: "Makine Bakım ve Onarım",
