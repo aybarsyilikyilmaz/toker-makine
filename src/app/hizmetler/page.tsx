@@ -1,6 +1,6 @@
 import JsonLd from '@/components/JsonLd';
 import { pageMetadata, breadcrumbJsonLd } from '@/lib/seo';
-import { ArrowRight } from 'lucide-react';
+import { Check } from 'lucide-react';
 import styles from './hizmetler.module.css';
 
 export const metadata = pageMetadata({
@@ -41,38 +41,36 @@ export default function ServicesPage() {
   return (
     <div className={styles.main}>
       <JsonLd data={breadcrumbJsonLd("Hizmetler", "/hizmetler")} />
-      <section className="section bg-white" style={{ paddingBottom: '80px' }}>
+      <section className={`section bg-white ${styles.page}`}>
         <div className="container">
-          <div className="section-title">
+          <div className="section-title tight">
             <h1 className="text-red section-heading">Hizmetlerimiz</h1>
             <div className="title-line"></div>
-            <p style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }} className="text-gray">
-              Teknik mükemmeliyet ve endüstriyel uzmanlık ile çözüm ortağınız.
-            </p>
+            <p className="text-gray">Teknik mükemmeliyet ve endüstriyel uzmanlık ile çözüm ortağınız.</p>
           </div>
 
-          <div className={styles.servicesContainer}>
+          <div className={styles.services}>
             {SERVICES_DATA.map((service, i) => (
-              <div key={i} className={`${styles.serviceBlock} ${i % 2 !== 0 ? styles.reverse : ''}`}>
-                <div className={styles.serviceText}>
-                  <div className={styles.titleWrapper}>
-                    <div className={styles.redBar}></div>
-                    <h2>{service.title}</h2>
-                  </div>
-                  <p>{service.desc}</p>
-                  <ul className={styles.featureList}>
-                    {service.items.map((item, idx) => (
-                      <li key={idx}>
-                        <ArrowRight size={18} />
+              <article key={service.title} className={`${styles.service} ${i % 2 !== 0 ? styles.reverse : ''}`}>
+                <div className={styles.text}>
+                  <span className={styles.index}>{String(i + 1).padStart(2, '0')}</span>
+                  <h2 className={styles.title}>{service.title}</h2>
+                  <p className={styles.desc}>{service.desc}</p>
+                  <ul className={styles.list}>
+                    {service.items.map((item) => (
+                      <li key={item}>
+                        <span className={styles.check} aria-hidden="true">
+                          <Check size={14} strokeWidth={3} />
+                        </span>
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className={styles.serviceImage}>
-                  <img src={service.img} alt={service.title} className={styles.actualImage} loading="lazy" />
+                <div className={styles.media}>
+                  <img src={service.img} alt={service.title} loading={i === 0 ? 'eager' : 'lazy'} />
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

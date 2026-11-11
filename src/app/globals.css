@@ -261,6 +261,36 @@ button {
   margin: 0 auto;
 }
 
+/* Sıkı başlık: başlık, çizgi ve açıklama tek blok gibi okunur (alt sayfalarda kullanılır) */
+.section-title.tight {
+  margin-bottom: 2.75rem;
+}
+
+.section-title.tight h1,
+.section-title.tight h2 {
+  margin-bottom: 0;
+}
+
+.section-title.tight .title-line {
+  margin: 1.1rem auto 0;
+}
+
+.section-title.tight p {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .section-title.tight {
+    margin-bottom: 2rem;
+  }
+
+  .section-title.tight h1,
+  .section-title.tight h2 {
+    font-size: 1.9rem;
+    line-height: 1.15;
+  }
+}
+
 .title-line {
   width: 60px;
   height: 4px;
