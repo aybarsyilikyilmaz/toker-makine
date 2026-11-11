@@ -3,6 +3,7 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 import { preload } from 'react-dom';
 import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
+import MachineGroups from '@/components/MachineGroups';
 import { organizationJsonLd } from '@/lib/seo';
 import styles from './page.module.css';
 
@@ -25,32 +26,6 @@ const LOGO_REFERENCES = [
   { name: "Burgmann Packings", logo: "/logos/bugman-packingslogo.svg" },
   { name: "CMS Makine", logo: "/logos/cms.png" },
   { name: "AkzoNobel", logo: "/logos/logo-akzonobel.webp" }
-];
-
-const MACHINE_PARKS = [
-  {
-    category: "CNC Dik İşleme Merkezleri",
-    items: [
-      { name: "NEWAY CNC Dik İşleme", image: "/images/cnc-dik-isleme-neway-kart.webp", detail: "X:1100 mm / Y:600 mm / Z:600 mm" },
-      { name: "HAAS VF2 CNC İşleme", image: "/images/cnc-dik-isleme-haas-kart.webp", detail: "X:800 mm / Y:400 mm / Z:500 mm" }
-    ]
-  },
-  {
-    category: "Universal Torna Tezgahları",
-    items: [
-      { name: "Çap 1200 x 5000 Torna", image: "/images/cap-1200x5000-torna-kart.webp", detail: "Büyük çaplı ve uzun parça işleme" },
-      { name: "Çap 660 x 3000 Torna", image: "/images/cap-600x3000-torna-kart.webp", detail: "Universal işleme kapasitesi" }
-    ]
-  },
-  {
-    category: "Universal Freze, Planya ve Ekipman",
-    items: [
-      { name: "Universal Freze Tezgahı", image: "/images/universal-freze-tezgah-kart.webp", detail: "Dişli ve kanal açma işlemleri" },
-      { name: "200'lük Dik Planya", image: "/images/dikplanya-200-kart.webp", detail: "Hassas kama kanalı açma" },
-      { name: "320'lik Dik Planya", image: "/images/dikplanya-320-kart.webp", detail: "Geniş kapasite kama kanalı açma" },
-      { name: "Easy-Laser Kaplin Ayar Cihazı", image: "/images/easylaser-kaplin-kart.webp", detail: "Profesyonel kaplin ayar ve ölçüm sistemi" }
-    ]
-  }
 ];
 
 const TRUST_BADGES = [
@@ -164,29 +139,7 @@ export default function Home() {
             <p>Geniş ve teknolojik makine parkurumuzla her kapasitede üretim ve bakım çözümleri.</p>
           </div>
 
-          <div className={styles.mGroups}>
-            {MACHINE_PARKS.map((group, i) => (
-              <div key={group.category} className={styles.mGroup}>
-                <div className={styles.mHead}>
-                  <span className={styles.mIndex}>{String(i + 1).padStart(2, '0')}</span>
-                  <h3 className={styles.mGroupTitle}>{group.category}</h3>
-                </div>
-                <div className={styles.mGrid}>
-                  {group.items.map((item) => (
-                    <article key={item.name} className={styles.mCard}>
-                      <div className={styles.mMedia}>
-                        <img src={item.image} alt={item.name} loading="lazy" width={800} height={600} />
-                      </div>
-                      <div className={styles.mBody}>
-                        <h4 className={styles.mName}>{item.name}</h4>
-                        <p className={styles.mSpec}>{item.detail}</p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <MachineGroups headingLevel={3} />
         </div>
       </section>
 

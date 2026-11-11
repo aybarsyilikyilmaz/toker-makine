@@ -1,6 +1,6 @@
 import JsonLd from '@/components/JsonLd';
+import MachineGroups from '@/components/MachineGroups';
 import { pageMetadata, breadcrumbJsonLd } from '@/lib/seo';
-import Image from 'next/image';
 import styles from './makine-parkuru.module.css';
 
 export const metadata = pageMetadata({
@@ -9,75 +9,19 @@ export const metadata = pageMetadata({
   path: "/makine-parkuru",
 });
 
-const MACHINE_PARKS = [
-  {
-    category: "CNC Dik İşleme Merkezleri",
-    items: [
-      { name: "NEWAY CNC Dik İşleme", image: "/images/cnc-dik-isleme-neway.webp", detail: "X:1100 mm / Y:600 mm / Z:600 mm" },
-      { name: "HAAS VF2 CNC İşleme", image: "/images/cnc-dik-isleme-haas.webp", detail: "X:800 mm / Y:400 mm / Z:500 mm" }
-    ]
-  },
-  {
-    category: "Universal Torna Tezgahları",
-    items: [
-      { name: "Çap 1200 x 5000 Torna", image: "/images/cap-1200x5000-torna.webp", detail: "Büyük çaplı ve uzun parça işleme" },
-      { name: "Çap 660 x 3000 Torna", image: "/images/cap-600x3000-torna.webp", detail: "Universal işleme kapasitesi" }
-    ]
-  },
-  {
-    category: "Universal Freze, Planya ve Ekipman",
-    items: [
-      { name: "Universal Freze Tezgahı", image: "/images/universal-freze-tezgah.webp", detail: "Dişli ve kanal açma işlemleri" },
-      { name: "200'lük Dik Planya", image: "/images/dikplanya-200.webp", detail: "Hassas kama kanalı açma" },
-      { name: "320'lik Dik Planya", image: "/images/dikplanya-320.webp", detail: "Geniş kapasite kama kanalı açma" },
-      { name: "Easy-Laser Kaplin Ayar Cihazı", image: "/images/easylaser-kaplin.webp", detail: "Profesyonel kaplin ayar ve ölçüm sistemi" }
-    ]
-  }
-];
-
 export default function MakineParkuru() {
   return (
     <div className={styles.main}>
       <JsonLd data={breadcrumbJsonLd("Makine Parkuru", "/makine-parkuru")} />
-      <section className={styles.header}>
+      <section className={`section bg-white ${styles.page}`}>
         <div className="container">
-          <div className={styles.headerContent}>
-            <h1>Makine <span>Parkurumuz</span></h1>
-            <div className={styles.line}></div>
-            <p>Geniş ve teknolojik makine parkurumuzla her kapasitede üretim ve bakım çözümleri.</p>
+          <div className="section-title tight">
+            <h1 className="text-red section-heading">Makine Parkurumuz</h1>
+            <div className="title-line"></div>
+            <p className="text-gray">Geniş ve teknolojik makine parkurumuzla her kapasitede üretim ve bakım çözümleri.</p>
           </div>
-        </div>
-      </section>
 
-      <section className={styles.galleryWrapper}>
-        <div className="container">
-          {MACHINE_PARKS.map((group, i) => (
-            <div key={i} className={styles.machineGroup}>
-              <h3 className={styles.groupTitle}>{group.category}</h3>
-              <div className={styles.machineGrid}>
-                {group.items.map((item, idx) => (
-                  <div key={idx} className={styles.machineCard}>
-                    <div className={styles.machineImageWrapper}>
-                      <Image 
-                        src={item.image} 
-                        alt={item.name} 
-                        width={600}
-                        height={400}
-                        className={styles.machineImage}
-                        loading="lazy"
-                      />
-                      <div className={styles.cardOverlay}>
-                        <p>{item.detail}</p>
-                      </div>
-                    </div>
-                    <div className={styles.machineInfo}>
-                      <h4>{item.name}</h4>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+          <MachineGroups headingLevel={2} />
         </div>
       </section>
     </div>
