@@ -1,14 +1,17 @@
-import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { pageMetadata, breadcrumbJsonLd } from '@/lib/seo';
 import styles from './hakkimizda.module.css';
 
-export const metadata: Metadata = {
-  title: "Hakkımızda | Toker Teknik - Deneyim ve Güven",
+export const metadata = pageMetadata({
+  title: "Hakkımızda - Deneyim ve Güven",
   description: "Talaşlı imalat ve makine bakım onarım sektöründe yılların deneyimi, hassas üretim kabiliyeti ve güçlü makine parkurumuz ile çözüm ortağınız Toker Teknik.",
-};
+  path: "/hakkimizda",
+});
 
 export default function AboutPage() {
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
+      <JsonLd data={breadcrumbJsonLd("Hakkımızda", "/hakkimizda")} />
       {/* Introduction Section */}
       <section className="section bg-white">
         <div className="container">
@@ -63,6 +66,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

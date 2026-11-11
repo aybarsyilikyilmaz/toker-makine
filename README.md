@@ -16,6 +16,6 @@ Toker Teknik Makina kurumsal web sitesi. Talaşlı imalat, makine bakım ve onar
 
 ## İletişim
 - **Telefon:** 0262 646 56 39
-- **Web:** https://toker-makina.vercel.app
+- **Web:** https://www.tokerteknikmakina.com
 
 Developed and Designed by **wetase.com** 

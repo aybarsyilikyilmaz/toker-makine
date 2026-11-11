@@ -1,11 +1,13 @@
-import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { pageMetadata, breadcrumbJsonLd } from '@/lib/seo';
 import { ArrowRight } from 'lucide-react';
 import styles from './hizmetler.module.css';
 
-export const metadata: Metadata = {
-  title: "Hizmetlerimiz | Toker Teknik - Talaşlı İmalat ve Bakım",
+export const metadata = pageMetadata({
+  title: "Hizmetlerimiz - Talaşlı İmalat ve Bakım",
   description: "Talaşlı imalat, CNC işleme, makine bakım, onarım ve revizyon hizmetlerimizle endüstriyel çözümler sunuyoruz. Toker Teknik uzman kadrosuyla yanınızda.",
-};
+  path: "/hizmetler",
+});
 
 const SERVICES_DATA = [
   {
@@ -37,11 +39,12 @@ const SERVICES_DATA = [
 
 export default function ServicesPage() {
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
+      <JsonLd data={breadcrumbJsonLd("Hizmetler", "/hizmetler")} />
       <section className="section bg-white" style={{ paddingBottom: '80px' }}>
         <div className="container">
           <div className="section-title">
-            <h2 className="text-red">Hizmetlerimiz</h2>
+            <h1 className="text-red section-heading">Hizmetlerimiz</h1>
             <div className="title-line"></div>
             <p style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }} className="text-gray">
               Teknik mükemmeliyet ve endüstriyel uzmanlık ile çözüm ortağınız.
@@ -74,6 +77,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

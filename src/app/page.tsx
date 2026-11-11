@@ -2,6 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { preload } from 'react-dom';
+import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { organizationJsonLd } from '@/lib/seo';
 import styles from './page.module.css';
 
 // Videonun ilk karesi: sayfa açılır açılmaz görünür, video yüklenince oynamaya başlar.
@@ -51,11 +54,16 @@ const MACHINE_PARKS = [
   }
 ];
 
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
+
 export default function Home() {
   preload(HERO_POSTER, { as: 'image', fetchPriority: 'high' });
 
   return (
     <>
+      <JsonLd data={organizationJsonLd} />
       {/* Hero Section - Optimized Video Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBackground}>

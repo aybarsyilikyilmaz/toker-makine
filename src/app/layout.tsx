@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,7 +16,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.tokerteknikmakina.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Toker Teknik | Talaşlı İmalat ve Makine Bakım Hizmetleri",
     template: "%s | Toker Teknik"
@@ -25,16 +26,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Toker Teknik | Talaşlı İmalat ve Makine Bakım Hizmetleri",
     description: "Uzman kadromuz ile talaşlı imalat, makine bakım ve onarım süreçlerinde hassas çözümler sunuyoruz.",
-    url: 'https://www.tokerteknikmakina.com',
+    url: '/',
     siteName: 'Toker Teknik',
-    images: [
-      {
-        url: '/toker-logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'Toker Teknik Logo',
-      },
-    ],
     locale: 'tr_TR',
     type: 'website',
   },
@@ -42,7 +35,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Toker Teknik',
     description: 'Hassas talaşlı imalat ve profesyonel makine bakım çözümleri.',
-    images: ['/toker-logo.png'],
   },
 };
 

@@ -1,18 +1,21 @@
-import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { pageMetadata, breadcrumbJsonLd } from '@/lib/seo';
 import { MapPin, Phone, Mail, Smartphone, MessageCircle, Clock, ArrowRight } from 'lucide-react';
 import styles from './iletisim.module.css';
 
-export const metadata: Metadata = {
-  title: "İletişim | Toker Teknik - Bize Ulaşın",
+export const metadata = pageMetadata({
+  title: "İletişim - Bize Ulaşın",
   description: "Toker Teknik Makina iletişim bilgileri, Hasköy Sanayi Sitesi'ndeki konumuz ve çalışma saatlerimiz. Talaşlı imalat çözümleri için bizimle iletişime geçin.",
-};
+  path: "/iletisim",
+});
 
 export default function IletisimPage() {
   const address = "Sultan Orhan Mah. Hasköy Sanayi Sitesi NO:11A/15 Gebze / Kocaeli";
   const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1509.6!2d29.414!3d40.822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb21694a3d38e3%3A0xb94445842eb25dc3!2sToker%20Teknik%20Makina!5e0!3m2!1str!2str!4v1712011234567!5m2!1str!2str`;
 
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
+      <JsonLd data={breadcrumbJsonLd("İletişim", "/iletisim")} />
       {/* Header */}
       <section className="section bg-white" style={{ paddingBottom: '40px' }}>
         <div className="container">
@@ -93,6 +96,6 @@ export default function IletisimPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

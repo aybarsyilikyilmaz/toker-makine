@@ -1,11 +1,13 @@
+import JsonLd from '@/components/JsonLd';
+import { pageMetadata, breadcrumbJsonLd } from '@/lib/seo';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import styles from './makine-parkuru.module.css';
 
-export const metadata: Metadata = {
-  title: "Makine Parkurumuz | Toker Teknik - Talaşlı İmalat Kapasitesi",
+export const metadata = pageMetadata({
+  title: "Makine Parkurumuz - Talaşlı İmalat Kapasitesi",
   description: "CNC dik işleme merkezleri, universal torna ve freze tezgahları ile donatılmış geniş makine parkurumuzun detaylı galerisi.",
-};
+  path: "/makine-parkuru",
+});
 
 const MACHINE_PARKS = [
   {
@@ -36,6 +38,7 @@ const MACHINE_PARKS = [
 export default function MakineParkuru() {
   return (
     <div className={styles.main}>
+      <JsonLd data={breadcrumbJsonLd("Makine Parkuru", "/makine-parkuru")} />
       <section className={styles.header}>
         <div className="container">
           <div className={styles.headerContent}>

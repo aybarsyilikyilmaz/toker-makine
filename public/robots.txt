@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://toker-makina.vercel.app/sitemap.xml

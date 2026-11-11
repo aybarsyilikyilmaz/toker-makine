@@ -1,7 +1,8 @@
+import { SITE_URL } from '@/lib/site'
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://tokerteknikmakina.com'
+  const baseUrl = SITE_URL
   
   return [
     {
