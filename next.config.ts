@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
+import { i18nRedirects, i18nRewrites } from "./src/i18n/routes";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    // Dil klasörü (app/[lang]) ana layout olduğu için, hiçbir sayfaya uymayan adresler bu 404 sayfasını gösterir
+    globalNotFound: true,
+  },
+  async redirects() {
+    return i18nRedirects();
+  },
+  async rewrites() {
+    return { beforeFiles: i18nRewrites(), afterFiles: [], fallback: [] };
+  },
   async headers() {
     return [
       {

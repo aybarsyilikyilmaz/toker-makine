@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "defaultTitle": "Toker Teknik | Talaşlı İmalat ve Makine Bakım Hizmetleri",
+    "description": "Toker Teknik San. ve Tic. Ltd. Şti., Uzman kadrosu ve geniş makine parkurumuz ile talaşlı imalat, makine bakım ve onarım süreçlerinde hassas çözümler sunmaktadır.",
+    "keywords": [
+      "talaşlı imalat",
+      "makine bakım",
+      "onarım",
+      "revizyon",
+      "gebze makina",
+      "kocaeli talaşlı imalat",
+      "CNC işleme"
+    ],
+    "ogTitle": "Toker Teknik | Talaşlı İmalat ve Makine Bakım Hizmetleri",
+    "ogDescription": "Uzman kadromuz ile talaşlı imalat, makine bakım ve onarım süreçlerinde hassas çözümler sunuyoruz.",
+    "twitterTitle": "Toker Teknik",
+    "twitterDescription": "Hassas talaşlı imalat ve profesyonel makine bakım çözümleri.",
+    "ogImageAlt": "Toker Teknik - Talaşlı İmalat, Makine Bakım ve Onarım Hizmetleri"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "machines": "Makine Parkuru",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "homeAria": "Toker Teknik ana sayfa",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "language": "Dil seçimi"
+  },
+  "home": {
+    "hero": {
+      "line1": "Endüstriyel",
+      "accent1": "Çözümler,",
+      "line2": "Teknik",
+      "accent2": "Üstünlük",
+      "text": "Toker Teknik Makina ve Bakım Hizmetleri Ltd. Şti. ile projelerinizde yüksek hassasiyet ve güvenilir mühendislik.",
+      "ctaPrimary": "Hizmetleri Keşfet",
+      "ctaSecondary": "İletişime Geç"
+    },
+    "trustLabel": "Öne çıkan yetkinlikler",
+    "trust": {
+      "precision": {
+        "title": "Hassas Üretim",
+        "text": "Yüksek kalite standartlarında"
+      },
+      "engineering": {
+        "title": "Mühendislik",
+        "text": "Yenilikçi teknik çözümler"
+      },
+      "quality": {
+        "title": "Endüstriyel Kalite",
+        "text": "ISO standartlarında üretim"
+      },
+      "service": {
+        "title": "Bakım & Onarım",
+        "text": "Kesintisiz işletme desteği"
+      }
+    },
+    "about": {
+      "title": "Hakkımızda",
+      "paragraphs": [
+        "Toker Teknik Makina, talaşlı imalat alanında kaliteli, güvenilir ve çözüm odaklı hizmet sunmak amacıyla faaliyet göstermektedir. Sahip olduğumuz tecrübe ve güçlü makine parkurumuz ile farklı sektörlere yönelik hassas ve yüksek standartlarda üretim gerçekleştirmekteyiz.",
+        "Geniş makine altyapımız sayesinde büyük çaplı ve uzun parça işleme kabiliyetine sahip olup hem konvansiyonel hem de CNC tezgahlarımızla müşteri taleplerine esnek ve hızlı çözümler sunmaktayız. Bakım ve onarım hizmetlerimizle de makinelerin verimli çalışmasına katkı sağlıyoruz."
+      ]
+    },
+    "machines": {
+      "title": "Makine Parkurumuz",
+      "text": "Geniş ve teknolojik makine parkurumuzla her kapasitede üretim ve bakım çözümleri."
+    },
+    "references": {
+      "title": "Referanslarımız",
+      "text": "Bize güvenen ve birlikte değer ürettiğimiz çözüm ortaklarımız."
+    },
+    "whatsappAria": "WhatsApp ile yazın"
+  },
+  "machines": {
+    "categories": {
+      "cnc": "CNC Dik İşleme Merkezleri",
+      "lathe": "Universal Torna Tezgahları",
+      "milling": "Universal Freze, Planya ve Ekipman"
+    },
+    "items": {
+      "neway": {
+        "name": "NEWAY CNC Dik İşleme",
+        "detail": "X:1100 mm / Y:600 mm / Z:600 mm"
+      },
+      "haas": {
+        "name": "HAAS VF2 CNC İşleme",
+        "detail": "X:800 mm / Y:400 mm / Z:500 mm"
+      },
+      "lathe1200": {
+        "name": "Çap 1200 x 5000 Torna",
+        "detail": "Büyük çaplı ve uzun parça işleme"
+      },
+      "lathe660": {
+        "name": "Çap 660 x 3000 Torna",
+        "detail": "Universal işleme kapasitesi"
+      },
+      "mill": {
+        "name": "Universal Freze Tezgahı",
+        "detail": "Dişli ve kanal açma işlemleri"
+      },
+      "slotter200": {
+        "name": "200'lük Dik Planya",
+        "detail": "Hassas kama kanalı açma"
+      },
+      "slotter320": {
+        "name": "320'lik Dik Planya",
+        "detail": "Geniş kapasite kama kanalı açma"
+      },
+      "easylaser": {
+        "name": "Easy-Laser Kaplin Ayar Cihazı",
+        "detail": "Profesyonel kaplin ayar ve ölçüm sistemi"
+      }
+    }
+  },
+  "servicesPage": {
+    "meta": {
+      "title": "Hizmetlerimiz - Talaşlı İmalat ve Bakım",
+      "description": "Talaşlı imalat, CNC işleme, makine bakım, onarım ve revizyon hizmetlerimizle endüstriyel çözümler sunuyoruz. Toker Teknik uzman kadrosuyla yanınızda."
+    },
+    "title": "Hizmetlerimiz",
+    "subtitle": "Teknik mükemmeliyet ve endüstriyel uzmanlık ile çözüm ortağınız.",
+    "services": [
+      {
+        "title": "Talaşlı İmalat",
+        "desc": "Talaşlı imalat kapsamında, farklı sektörlerin ihtiyaçlarına yönelik hassas ve kaliteli parça üretimi gerçekleştirmekteyiz. Geniş makine parkurumuz ve teknik altyapımız sayesinde hem tekil hem de seri üretimlerde, müşteri taleplerine uygun çözümler sunmaktayız.",
+        "items": [
+          "Farklı ölçü ve toleranslarda parça üretimi",
+          "Torna ve freze işlemleri (konvansiyonel & CNC)",
+          "Büyük çaplı ve uzun parça işleme",
+          "Hassas işleme ve ölçüye uygun üretim",
+          "Tekil parça ve seri imalat",
+          "Teknik resme uygun üretim ve revizyon işlemleri"
+        ]
+      },
+      {
+        "title": "Makine Bakım ve Onarım",
+        "desc": "Makine bakım ve onarım hizmetlerimiz kapsamında, ekipmanların verimli, güvenli ve kesintisiz çalışmasını sağlamak amacıyla profesyonel çözümler sunmaktayız. Deneyimli ekibimiz ile arıza tespiti, bakım ve revizyon süreçlerini titizlikle yürütmekteyiz.",
+        "items": [
+          "Periyodik bakım hizmetleri",
+          "Arıza tespit ve onarım çalışmaları",
+          "Parça değişimi ve revizyon işlemleri",
+          "Makine performans iyileştirme çalışmaları",
+          "Yerinde bakım ve servis hizmeti"
+        ]
+      }
+    ]
+  },
+  "machinesPage": {
+    "meta": {
+      "title": "Makine Parkurumuz - Talaşlı İmalat Kapasitesi",
+      "description": "CNC dik işleme merkezleri, universal torna ve freze tezgahları ile donatılmış geniş makine parkurumuzun detaylı galerisi."
+    },
+    "title": "Makine Parkurumuz",
+    "subtitle": "Geniş ve teknolojik makine parkurumuzla her kapasitede üretim ve bakım çözümleri."
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "Hakkımızda - Deneyim ve Güven",
+      "description": "Talaşlı imalat ve makine bakım onarım sektöründe yılların deneyimi, hassas üretim kabiliyeti ve güçlü makine parkurumuz ile çözüm ortağınız Toker Teknik."
+    },
+    "title": "Hakkımızda",
+    "subtitle": "Deneyim, Hassasiyet ve Güven ile Endüstriyel Üretim Yolculuğumuz.",
+    "blocks": [
+      {
+        "title": "Biz Kimiz?",
+        "paragraphs": [
+          "Firmamız, talaşlı imalat alanında kaliteli, güvenilir ve çözüm odaklı hizmet sunmak amacıyla faaliyet göstermektedir. Sahip olduğumuz tecrübe ve güçlü makine parkurumuz ile farklı sektörlere yönelik hassas ve yüksek standartlarda üretim gerçekleştirmekteyiz. Geniş makine altyapımız sayesinde büyük çaplı ve uzun parça işleme kabiliyetine sahip olup hem konvansiyonel hem de CNC tezgahlarımızla müşteri taleplerine esnek ve hızlı çözümler sunmaktayız.",
+          "Üretim süreçlerimizde kalite, süreklilik ve müşteri memnuniyeti önceliğimizdir. Makine bakım ve onarım hizmetlerimizle, sadece üretim değil aynı zamanda işletmelerin sürdürülebilirliği için de destek sağlamaktayız. Her projede titizlikle çalışarak, zamanında teslim ve yüksek kalite prensibinden ödün vermeden ilerlemekteyiz."
+        ]
+      },
+      {
+        "title": "Vizyonumuz & Misyonumuz",
+        "paragraphs": [
+          "Firmamız, talaşlı imalat ve makine bakım-onarım alanlarında, sektördeki deneyimiyle güvenilir ve kaliteli hizmet sunmaktadır. Geniş makine parkurumuz ile farklı ölçü ve özelliklerde parçaların hassas üretimini gerçekleştirmekteyiz. Konvansiyonel ve CNC tezgahlarımız sayesinde müşteri taleplerine hızlı ve esnek çözümler sunarken, bakım ve onarım hizmetlerimizle makinelerin verimli ve uzun ömürlü çalışmasına katkı sağlıyoruz.",
+          "Her projeye titizlikle yaklaşarak, yüksek kalite standartlarında üretim yapmayı ve müşteri beklentilerini en iyi şekilde karşılamayı hedefliyoruz. Alanında deneyimli ekibimiz ve teknolojik altyapımız ile, talaşlı imalat ihtiyaçlarınıza güvenilir bir çözüm ortağı olmayı hedefliyoruz."
+        ]
+      }
+    ]
+  },
+  "contactPage": {
+    "meta": {
+      "title": "İletişim - Bize Ulaşın",
+      "description": "Toker Teknik Makina iletişim bilgileri, Hasköy Sanayi Sitesi'ndeki konumuz ve çalışma saatlerimiz. Talaşlı imalat çözümleri için bizimle iletişime geçin."
+    },
+    "title": "İletişim",
+    "company": "TOKER TEKNİK MAKİNA VE BAKIM HİZMETLERİ LTD.ŞTİ.",
+    "mapTitle": "Toker Teknik Makina konumu",
+    "labels": {
+      "address": "Merkez Ofis & Atölye",
+      "phone": "Sabit Telefon",
+      "gsm": "GSM / WhatsApp",
+      "email": "E-posta",
+      "hours": "Çalışma Saatleri"
+    },
+    "actions": {
+      "location": "Konum",
+      "call": "Ara",
+      "whatsapp": "WhatsApp",
+      "mail": "Mail"
+    },
+    "hours": [
+      "Hafta İçi: 08:00 - 17:30",
+      "Cumartesi: 08:00 - 14:00"
+    ]
+  },
+  "footer": {
+    "about": "TOKER TEKNİK MAKİNA VE BAKIM HİZMETLERİ LTD.ŞTİ. olarak uzman kadromuz ve geniş makine parkurumuz ile güvenilir çözüm ortağınızız.",
+    "corporate": "Kurumsal",
+    "services": "Hizmetler",
+    "serviceLinks": [
+      "Talaşlı İmalat",
+      "Bakım Onarım",
+      "Revizyon"
+    ],
+    "contact": "İletişim Bilgileri",
+    "email": "E-posta",
+    "rights": "Toker Teknik. Tüm hakları saklıdır.",
+    "creditBefore": "",
+    "creditAfter": "tarafından geliştirildi"
+  },
+  "breadcrumbHome": "Ana Sayfa"
+}

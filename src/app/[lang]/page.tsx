@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { preload } from 'react-dom';
-import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import JsonLd from '@/components/JsonLd';
 import MachineGroups from '@/components/MachineGroups';
 import { organizationJsonLd } from '@/lib/seo';
+import { getDictionary } from '@/i18n/dictionaries';
+import { isLocale, localizedPath } from '@/i18n/routes';
 import styles from './page.module.css';
 
 // Videonun ilk karesi: sayfa açılır açılmaz görünür, video yüklenince oynamaya başlar.
@@ -28,23 +30,19 @@ const LOGO_REFERENCES = [
   { name: "AkzoNobel", logo: "/logos/logo-akzonobel.webp" }
 ];
 
-const TRUST_BADGES = [
-  { id: 'precision', title: 'Hassas Üretim', text: 'Yüksek kalite standartlarında' },
-  { id: 'engineering', title: 'Mühendislik', text: 'Yenilikçi teknik çözümler' },
-  { id: 'quality', title: 'Endüstriyel Kalite', text: 'ISO standartlarında üretim' },
-  { id: 'service', title: 'Bakım & Onarım', text: 'Kesintisiz işletme desteği' },
-];
+const TRUST_BADGE_IDS = ['precision', 'engineering', 'quality', 'service'] as const;
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/' },
-};
+export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+  const dict = getDictionary(lang);
+  const t = dict.home;
 
-export default function Home() {
   preload(HERO_POSTER, { as: 'image', fetchPriority: 'high' });
 
   return (
     <>
-      <JsonLd data={organizationJsonLd} />
+      <JsonLd data={organizationJsonLd(lang)} />
       {/* Hero Section - Optimized Video Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBackground}>
@@ -68,25 +66,25 @@ export default function Home() {
             <h1 className={styles.heroTitle}>
               <span className={styles.line}>
                 <span className={styles.lineInner}>
-                  Endüstriyel <span className={styles.accent}>Çözümler,</span>
+                  {t.hero.line1} <span className={styles.accent}>{t.hero.accent1}</span>
                 </span>
               </span>{' '}
               <span className={styles.line}>
                 <span className={styles.lineInner}>
-                  Teknik <span className={styles.accent}>Üstünlük</span>
+                  {t.hero.line2} <span className={styles.accent}>{t.hero.accent2}</span>
                 </span>
               </span>
             </h1>
             <p className={styles.heroText}>
-              Toker Teknik Makina ve Bakım Hizmetleri Ltd. Şti. ile projelerinizde yüksek hassasiyet ve güvenilir mühendislik.
+              {t.hero.text}
             </p>
 
             <div className={styles.heroCta}>
-              <Link href="/hizmetler" className="btn-primary">
-                Hizmetleri Keşfet <ArrowRight size={18} className="btn-arrow" aria-hidden="true" />
+              <Link href={localizedPath(lang, 'services')} className="btn-primary">
+                {t.hero.ctaPrimary} <ArrowRight size={18} className="btn-arrow" aria-hidden="true" />
               </Link>
-              <Link href="/iletisim" className="btn-outline btn-on-dark">
-                İletişime Geç
+              <Link href={localizedPath(lang, 'contact')} className="btn-outline btn-on-dark">
+                {t.hero.ctaSecondary}
               </Link>
             </div>
           </div>
@@ -95,15 +93,15 @@ export default function Home() {
         {/* Öne çıkan yetkinlikler: masaüstünde hero içinde, mobilde hero altında */}
         <div className={styles.trust}>
           <div className="container">
-            <ul className={styles.trustGrid} aria-label="Öne çıkan yetkinlikler">
-              {TRUST_BADGES.map((badge) => (
-                <li key={badge.id} className={styles.trustItem}>
+            <ul className={styles.trustGrid} aria-label={t.trustLabel}>
+              {TRUST_BADGE_IDS.map((id) => (
+                <li key={id} className={styles.trustItem}>
                   <span className={styles.trustIcon}>
-                    <img src={`/icons/${badge.id}.webp`} alt="" width={192} height={192} />
+                    <img src={`/icons/${id}.webp`} alt="" width={192} height={192} />
                   </span>
                   <div>
-                    <h3 className={styles.trustTitle}>{badge.title}</h3>
-                    <p className={styles.trustText}>{badge.text}</p>
+                    <h3 className={styles.trustTitle}>{t.trust[id].title}</h3>
+                    <p className={styles.trustText}>{t.trust[id].text}</p>
                   </div>
                 </li>
               ))}
@@ -116,16 +114,13 @@ export default function Home() {
       <section className={`section bg-light ${styles.about}`} id="hakkimizda">
         <div className="container">
           <div className="section-title">
-            <h2 className="text-red">Hakkımızda</h2>
+            <h2 className="text-red">{t.about.title}</h2>
             <div className="title-line"></div>
           </div>
           <div className={styles.aboutText}>
-            <p>
-              Toker Teknik Makina, talaşlı imalat alanında kaliteli, güvenilir ve çözüm odaklı hizmet sunmak amacıyla faaliyet göstermektedir. Sahip olduğumuz tecrübe ve güçlü makine parkurumuz ile farklı sektörlere yönelik hassas ve yüksek standartlarda üretim gerçekleştirmekteyiz.
-            </p>
-            <p>
-              Geniş makine altyapımız sayesinde büyük çaplı ve uzun parça işleme kabiliyetine sahip olup hem konvansiyonel hem de CNC tezgahlarımızla müşteri taleplerine esnek ve hızlı çözümler sunmaktayız. Bakım ve onarım hizmetlerimizle de makinelerin verimli çalışmasına katkı sağlıyoruz.
-            </p>
+            {t.about.paragraphs.map((text) => (
+              <p key={text.slice(0, 24)}>{text}</p>
+            ))}
           </div>
         </div>
       </section>
@@ -134,12 +129,12 @@ export default function Home() {
       <section className={`section bg-white ${styles.tightTitle} ${styles.machinesSection}`}>
         <div className="container">
           <div className="section-title">
-            <h2 className="text-red">Makine Parkurumuz</h2>
+            <h2 className="text-red">{t.machines.title}</h2>
             <div className="title-line"></div>
-            <p>Geniş ve teknolojik makine parkurumuzla her kapasitede üretim ve bakım çözümleri.</p>
+            <p>{t.machines.text}</p>
           </div>
 
-          <MachineGroups headingLevel={3} />
+          <MachineGroups machines={dict.machines} headingLevel={3} />
         </div>
       </section>
 
@@ -147,9 +142,9 @@ export default function Home() {
       <section className={`section bg-light ${styles.tightTitle}`}>
         <div className="container">
           <div className="section-title">
-            <h2>Referanslarımız</h2>
+            <h2>{t.references.title}</h2>
             <div className="title-line"></div>
-            <p>Bize güvenen ve birlikte değer ürettiğimiz çözüm ortaklarımız.</p>
+            <p>{t.references.text}</p>
           </div>
           <div className={styles.logoGrid}>
             {LOGO_REFERENCES.map((ref, i) => (
@@ -167,7 +162,7 @@ export default function Home() {
         </div>
       </section>
 
-      <a href="https://wa.me/905325721261" className="whatsapp-float" target="_blank" rel="noreferrer">
+      <a href="https://wa.me/905325721261" className="whatsapp-float" target="_blank" rel="noreferrer" aria-label={t.whatsappAria}>
         <MessageCircle size={32} />
       </a>
     </>

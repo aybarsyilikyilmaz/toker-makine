@@ -1,36 +1,31 @@
 import Link from 'next/link';
 import { MapPin, Phone, Mail, MessageCircle } from 'lucide-react';
+import { PAGE_KEYS, localizedPath, type Locale } from '@/i18n/routes';
+import type { Dictionary } from '@/i18n/dictionaries';
 import styles from './Footer.module.css';
-
-const CORPORATE_LINKS = [
-  { href: '/', label: 'Ana Sayfa' },
-  { href: '/hizmetler', label: 'Hizmetler' },
-  { href: '/makine-parkuru', label: 'Makine Parkuru' },
-  { href: '/hakkimizda', label: 'Hakkımızda' },
-  { href: '/iletisim', label: 'İletişim' },
-];
-
-const SERVICE_LINKS = ['Talaşlı İmalat', 'Bakım Onarım', 'Revizyon'];
 
 const MAPS_URL =
   'https://www.google.com/maps/search/?api=1&query=Sultan+Orhan+Mah.+Hasköy+Sanayi+Sitesi+NO:11A/15+Gebze+Kocaeli';
 
-export default function Footer() {
+type FooterProps = { locale: Locale; dict: Dictionary };
+
+export default function Footer({ locale, dict }: FooterProps) {
+  const t = dict.footer;
+  const corporateLinks = PAGE_KEYS.map((key) => ({ href: localizedPath(locale, key), label: dict.nav[key] }));
+
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footerGrid}`}>
         <div className={styles.colLogo}>
-          <Link href="/" className={styles.logoLink} aria-label="Toker Teknik ana sayfa">
+          <Link href={localizedPath(locale, 'home')} className={styles.logoLink} aria-label={dict.nav.homeAria}>
             <img src="/toker-logo.webp" alt="Toker Teknik Logo" width={517} height={115} className={styles.logoImage} />
           </Link>
-          <p className={styles.aboutText}>
-            TOKER TEKNİK MAKİNA VE BAKIM HİZMETLERİ LTD.ŞTİ. olarak uzman kadromuz ve geniş makine parkurumuz ile güvenilir çözüm ortağınızız.
-          </p>
+          <p className={styles.aboutText}>{t.about}</p>
           <div className={styles.socials}>
             <a href="https://wa.me/905325721261" target="_blank" rel="noreferrer" aria-label="WhatsApp">
               <MessageCircle size={18} />
             </a>
-            <a href="mailto:info@tokerteknikmakina.com" aria-label="E-posta">
+            <a href="mailto:info@tokerteknikmakina.com" aria-label={t.email}>
               <Mail size={18} />
             </a>
             <a
@@ -44,10 +39,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <nav className={styles.colLinks} aria-label="Kurumsal">
-          <h3 className={styles.heading}>Kurumsal</h3>
+        <nav className={styles.colLinks} aria-label={t.corporate}>
+          <h3 className={styles.heading}>{t.corporate}</h3>
           <ul className={styles.links}>
-            {CORPORATE_LINKS.map((link) => (
+            {corporateLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href}>{link.label}</Link>
               </li>
@@ -55,19 +50,19 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <nav className={styles.colServices} aria-label="Hizmetler">
-          <h3 className={styles.heading}>Hizmetler</h3>
+        <nav className={styles.colServices} aria-label={t.services}>
+          <h3 className={styles.heading}>{t.services}</h3>
           <ul className={styles.links}>
-            {SERVICE_LINKS.map((label) => (
+            {t.serviceLinks.map((label) => (
               <li key={label}>
-                <Link href="/hizmetler">{label}</Link>
+                <Link href={localizedPath(locale, 'services')}>{label}</Link>
               </li>
             ))}
           </ul>
         </nav>
 
         <div className={styles.colContact}>
-          <h3 className={styles.heading}>İletişim Bilgileri</h3>
+          <h3 className={styles.heading}>{t.contact}</h3>
           <ul className={styles.contactList}>
             <li>
               <MapPin size={18} aria-hidden="true" />
@@ -93,12 +88,13 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomContent}`}>
-          <p>&copy; {new Date().getFullYear()} Toker Teknik. Tüm hakları saklıdır.</p>
+          <p>&copy; {new Date().getFullYear()} {t.rights}</p>
           <a href="https://anveb.com" target="_blank" rel="noopener noreferrer" className={styles.credit}>
+            {t.creditBefore && <span>{t.creditBefore}</span>}
             <span className={styles.creditLogo}>
               <span className={styles.srOnly}>anveb</span>
             </span>
-            <span>tarafından geliştirildi</span>
+            {t.creditAfter && <span>{t.creditAfter}</span>}
           </a>
         </div>
       </div>

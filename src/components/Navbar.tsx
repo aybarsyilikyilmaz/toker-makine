@@ -3,24 +3,28 @@
 import { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSelectedLayoutSegment } from 'next/navigation';
+import { LOCALE_INFO, localizedPath, pageFromSegment, type Locale, type PageKey } from '@/i18n/routes';
 import styles from './Navbar.module.css';
 
-const NAV_LINKS = [
-  { href: '/', label: 'Ana Sayfa' },
-  { href: '/hizmetler', label: 'Hizmetler' },
-  { href: '/makine-parkuru', label: 'Makine Parkuru' },
-  { href: '/hakkimizda', label: 'Hakkımızda' },
-  { href: '/iletisim', label: 'İletişim' },
-];
+type NavLink = { key: PageKey; href: string; label: string };
+
+type NavbarProps = {
+  locale: Locale;
+  links: NavLink[];
+  locales: Locale[];
+  labels: { homeAria: string; openMenu: string; closeMenu: string; language: string };
+};
 
 // Sunucuda useLayoutEffect uyarı verdiği için tarayıcıda layout, sunucuda normal effect kullanılır.
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 type Indicator = { x: number; w: number; visible: boolean };
 
-export default function Navbar() {
+export default function Navbar({ locale, links, locales, labels }: NavbarProps) {
   const pathname = usePathname();
+  // Aktif sayfa adresten değil klasörden bulunur; böylece /en/services gibi çevrilmiş adreslerde de doğru çalışır
+  const currentPage = pageFromSegment(useSelectedLayoutSegment());
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
@@ -28,7 +32,7 @@ export default function Navbar() {
   const [indicatorReady, setIndicatorReady] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
-  const activeHref = NAV_LINKS.find((l) => l.href === pathname)?.href ?? null;
+  const activeHref = links.find((l) => l.key === currentPage)?.href ?? null;
   const target = hovered ?? activeHref;
 
   // Kırmızı alt çizgiyi hedef bağlantının altına taşır.
@@ -87,7 +91,7 @@ export default function Navbar() {
   return (
     <nav className={`${styles.root} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
-        <Link href="/" className={styles.logoLink} aria-label="Toker Teknik ana sayfa">
+        <Link href={localizedPath(locale, 'home')} className={styles.logoLink} aria-label={labels.homeAria}>
           <img
             src="/toker-logo.webp"
             alt="Toker Teknik Logo"
@@ -99,7 +103,7 @@ export default function Navbar() {
 
         <div ref={wrapRef} className={styles.menuWrap} onMouseLeave={() => setHovered(null)}>
           <ul id="site-menu" className={`${styles.menu} ${menuOpen ? styles.menuOpen : ''}`}>
-            {NAV_LINKS.map((link, i) => {
+            {links.map((link, i) => {
               const isActive = link.href === activeHref;
               const isLit = hovered ? hovered === link.href : isActive;
               return (
@@ -119,6 +123,27 @@ export default function Navbar() {
                 </li>
               );
             })}
+
+            {locales.length > 1 && (
+              <li className={styles.langItem} style={{ '--i': links.length } as CSSProperties}>
+                <div className={styles.langSwitch} role="group" aria-label={labels.language}>
+                  {locales.map((code) => (
+                    <Link
+                      key={code}
+                      href={localizedPath(code, currentPage ?? 'home')}
+                      hrefLang={LOCALE_INFO[code].bcp47}
+                      lang={code}
+                      title={LOCALE_INFO[code].label}
+                      aria-current={code === locale ? 'true' : undefined}
+                      className={`${styles.langLink} ${code === locale ? styles.langActive : ''}`}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {LOCALE_INFO[code].short}
+                    </Link>
+                  ))}
+                </div>
+              </li>
+            )}
           </ul>
           <span
             aria-hidden="true"
@@ -135,7 +160,7 @@ export default function Navbar() {
           type="button"
           className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
           onClick={() => setMenuOpen((o) => !o)}
-          aria-label={menuOpen ? 'Menüyü kapat' : 'Menüyü aç'}
+          aria-label={menuOpen ? labels.closeMenu : labels.openMenu}
           aria-expanded={menuOpen}
           aria-controls="site-menu"
         >
