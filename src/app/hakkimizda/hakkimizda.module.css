@@ -1,62 +1,91 @@
 .main {
-  padding-top: 75px; 
+  padding-top: 75px;
 }
 
-.centeredTitle {
-  color: var(--primary-red) !important;
-  text-align: center;
-  font-size: 3.5rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -2px;
-  margin-bottom: 0.5rem;
+.page {
+  padding: 4.5rem 0 6rem;
 }
 
-.plainContent {
-  max-width: 900px;
+/* Her blok bir satır: solda numaralı başlık, sağda metin (Makine Parkuru ile aynı dil) */
+.blocks {
+  max-width: 1080px;
   margin: 0 auto;
-  padding-top: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
+  border-top: 1px solid #ececec;
 }
 
-.aboutBlock {
-  position: relative;
+.block {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  padding: 44px 0;
+  border-bottom: 1px solid #ececec;
 }
 
-.blockInner {
-  border-left: 6px solid var(--primary-red);
-  padding-left: 30px;
-  transition: all 0.3s ease;
+.head {
+  position: sticky;
+  top: 96px;
+  align-self: start;
 }
 
-.aboutBlock:hover .blockInner {
-  border-left-width: 10px;
-  background-color: rgba(227, 6, 19, 0.02); /* Very subtle red tint on hover */
+.index {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--primary-red);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.aboutBlock h2 {
-  font-size: 2.2rem;
+.title {
+  margin: 0;
   color: var(--navy);
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
-.aboutBlock p {
-  font-size: 1.15rem;
-  line-height: 1.9;
-  color: #444;
-  margin-bottom: 2rem;
+.body {
+  max-width: 44rem;
 }
 
-.aboutBlock p:last-child {
-  margin-bottom: 0;
+.body p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+}
+
+.body p + p {
+  margin-top: 1.25rem;
 }
 
 @media (max-width: 992px) {
-  .centeredTitle { font-size: 2.5rem; }
-  .aboutBlock h2 { font-size: 1.8rem; }
-  .blockInner { padding-left: 20px; border-left-width: 4px; }
+  .block {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .head {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 3rem 0 4rem;
+  }
+
+  .block {
+    padding: 32px 0;
+  }
+
+  .title {
+    font-size: 1.35rem;
+  }
+
+  .body p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
 }
