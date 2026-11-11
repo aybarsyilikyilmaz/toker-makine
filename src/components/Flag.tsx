@@ -8,7 +8,8 @@ export default function Flag({ locale, className }: { locale: Locale; className?
 
   if (locale === 'tr') {
     return (
-      <svg className={className} viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      // Kare (yuvarlak) kırpım: hilal ve yıldızın oluşturduğu grup tam ortada kalır
+      <svg className={className} viewBox="94.6 0 800 800" aria-hidden="true">
         <rect width="1200" height="800" fill="#E30A17" />
         <circle cx="425" cy="400" r="200" fill="#fff" />
         <circle cx="475" cy="400" r="160" fill="#E30A17" />
