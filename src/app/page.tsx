@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, MessageCircle } from 'lucide-react';
+import { preload } from 'react-dom';
 import styles from './page.module.css';
+
+// Videonun ilk karesi: sayfa açılır açılmaz görünür, video yüklenince oynamaya başlar.
+const HERO_POSTER = '/toker-hero-poster.webp';
 
 const LOGO_REFERENCES = [
   { name: "Marshall Boya", logo: "/logos/marshall-boya.png" },
@@ -48,6 +52,8 @@ const MACHINE_PARKS = [
 ];
 
 export default function Home() {
+  preload(HERO_POSTER, { as: 'image', fetchPriority: 'high' });
+
   return (
     <>
       {/* Hero Section - Optimized Video Hero */}
@@ -59,8 +65,11 @@ export default function Home() {
             loop
             playsInline
             preload="auto"
+            poster={HERO_POSTER}
             className={styles.heroVideo}
+            aria-hidden="true"
           >
+            <source src="/toker-hero-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
             <source src="/toker-hero.mp4" type="video/mp4" />
           </video>
         </div>
