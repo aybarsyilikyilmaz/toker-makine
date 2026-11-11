@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "defaultTitle": "Toker Teknik | Zerspanung und Maschineninstandhaltung",
+    "description": "Toker Teknik bietet mit einem erfahrenen Team und einem umfangreichen Maschinenpark präzise Lösungen in der Zerspanung sowie in der Wartung und Instandsetzung von Maschinen.",
+    "keywords": [
+      "Zerspanung",
+      "CNC-Bearbeitung",
+      "Lohnfertigung",
+      "Präzisionsbearbeitung",
+      "Maschinenwartung",
+      "Instandsetzung",
+      "Überholung",
+      "Gebze",
+      "Kocaeli",
+      "Türkei"
+    ],
+    "ogTitle": "Toker Teknik | Zerspanung und Maschineninstandhaltung",
+    "ogDescription": "Mit unserem erfahrenen Team bieten wir präzise Lösungen in der Zerspanung sowie in der Wartung und Instandsetzung von Maschinen.",
+    "twitterTitle": "Toker Teknik",
+    "twitterDescription": "Präzise Zerspanung und professionelle Maschineninstandhaltung.",
+    "ogImageAlt": "Toker Teknik - Zerspanung, Maschinenwartung und Instandsetzung"
+  },
+  "nav": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "machines": "Maschinenpark",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "homeAria": "Toker Teknik Startseite",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "language": "Sprachauswahl"
+  },
+  "home": {
+    "hero": {
+      "line1": "Industrielle",
+      "accent1": "Lösungen,",
+      "line2": "Technische",
+      "accent2": "Exzellenz",
+      "text": "Höchste Präzision und zuverlässige Ingenieurleistung für Ihre Projekte – mit Toker Teknik Makina ve Bakım Hizmetleri Ltd. Şti.",
+      "ctaPrimary": "Leistungen entdecken",
+      "ctaSecondary": "Kontakt aufnehmen"
+    },
+    "trustLabel": "Unsere Kernkompetenzen",
+    "trust": {
+      "precision": {
+        "title": "Präzisionsfertigung",
+        "text": "Nach hohen Qualitätsstandards"
+      },
+      "engineering": {
+        "title": "Engineering",
+        "text": "Innovative technische Lösungen"
+      },
+      "quality": {
+        "title": "Industrielle Qualität",
+        "text": "Fertigung nach ISO-Normen"
+      },
+      "service": {
+        "title": "Wartung & Instandsetzung",
+        "text": "Für einen störungsfreien Betrieb"
+      }
+    },
+    "about": {
+      "title": "Über uns",
+      "paragraphs": [
+        "Toker Teknik Makina bietet hochwertige, zuverlässige und lösungsorientierte Dienstleistungen im Bereich der Zerspanung. Mit unserer Erfahrung und unserem leistungsstarken Maschinenpark fertigen wir präzise Teile nach hohen Standards für unterschiedlichste Branchen.",
+        "Dank unserer umfangreichen Maschinenausstattung bearbeiten wir auch Werkstücke mit großem Durchmesser und großer Länge. Mit konventionellen und CNC-Werkzeugmaschinen reagieren wir flexibel und schnell auf Kundenanforderungen. Mit unseren Wartungs- und Instandsetzungsleistungen tragen wir zudem zum effizienten Betrieb Ihrer Maschinen bei."
+      ]
+    },
+    "machines": {
+      "title": "Unser Maschinenpark",
+      "text": "Fertigungs- und Instandhaltungslösungen für jede Kapazität – mit unserem umfangreichen und modernen Maschinenpark."
+    },
+    "references": {
+      "title": "Unsere Referenzen",
+      "text": "Lösungspartner, die uns vertrauen und mit denen wir gemeinsam Mehrwert schaffen."
+    },
+    "whatsappAria": "Schreiben Sie uns auf WhatsApp"
+  },
+  "machines": {
+    "categories": {
+      "cnc": "CNC-Vertikal-Bearbeitungszentren",
+      "lathe": "Universaldrehmaschinen",
+      "milling": "Universalfräs- und Stoßmaschinen, Ausrüstung"
+    },
+    "items": {
+      "neway": {
+        "name": "NEWAY CNC-Vertikal-Bearbeitungszentrum",
+        "detail": "X:1100 mm / Y:600 mm / Z:600 mm"
+      },
+      "haas": {
+        "name": "HAAS VF2 CNC-Bearbeitungszentrum",
+        "detail": "X:800 mm / Y:400 mm / Z:500 mm"
+      },
+      "lathe1200": {
+        "name": "Drehmaschine Ø1200 x 5000",
+        "detail": "Bearbeitung großer Durchmesser und langer Werkstücke"
+      },
+      "lathe660": {
+        "name": "Drehmaschine Ø660 x 3000",
+        "detail": "Universelle Drehbearbeitung"
+      },
+      "mill": {
+        "name": "Universalfräsmaschine",
+        "detail": "Verzahnungs- und Nutfräsarbeiten"
+      },
+      "slotter200": {
+        "name": "Senkrechtstoßmaschine 200",
+        "detail": "Präzises Stoßen von Passfedernuten"
+      },
+      "slotter320": {
+        "name": "Senkrechtstoßmaschine 320",
+        "detail": "Nutenstoßen mit großer Kapazität"
+      },
+      "easylaser": {
+        "name": "Easy-Laser Wellenausrichtsystem",
+        "detail": "Professionelles Mess- und Ausrichtsystem für Kupplungen"
+      }
+    }
+  },
+  "servicesPage": {
+    "meta": {
+      "title": "Leistungen - Zerspanung und Instandhaltung",
+      "description": "Mit unseren Leistungen in Zerspanung, CNC-Bearbeitung, Maschinenwartung, Instandsetzung und Überholung bieten wir industrielle Lösungen. Toker Teknik steht Ihnen mit einem erfahrenen Team zur Seite."
+    },
+    "title": "Unsere Leistungen",
+    "subtitle": "Ihr Lösungspartner für technische Exzellenz und industrielles Know-how.",
+    "services": [
+      {
+        "title": "Zerspanung",
+        "desc": "Im Bereich der Zerspanung fertigen wir präzise und hochwertige Teile für die Anforderungen unterschiedlichster Branchen. Dank unseres umfangreichen Maschinenparks und unserer technischen Infrastruktur bieten wir sowohl in der Einzelteil- als auch in der Serienfertigung Lösungen, die genau auf die Anforderungen unserer Kunden abgestimmt sind.",
+        "items": [
+          "Fertigung von Teilen in unterschiedlichen Abmessungen und Toleranzen",
+          "Dreh- und Fräsbearbeitung (konventionell & CNC)",
+          "Bearbeitung großer Durchmesser und langer Werkstücke",
+          "Präzisionsbearbeitung und maßhaltige Fertigung",
+          "Einzelteil- und Serienfertigung",
+          "Fertigung und Nacharbeit nach technischer Zeichnung"
+        ]
+      },
+      {
+        "title": "Maschinenwartung und Instandsetzung",
+        "desc": "Mit unseren Wartungs- und Instandsetzungsleistungen sorgen wir mit professionellen Lösungen dafür, dass Anlagen effizient, sicher und unterbrechungsfrei arbeiten. Mit unserem erfahrenen Team führen wir Fehlerdiagnose, Wartung und Überholung mit größter Sorgfalt durch.",
+        "items": [
+          "Regelmäßige vorbeugende Wartung",
+          "Fehlerdiagnose und Reparatur",
+          "Austausch von Bauteilen und Überholung",
+          "Leistungsoptimierung von Maschinen",
+          "Wartung und Service vor Ort"
+        ]
+      }
+    ]
+  },
+  "machinesPage": {
+    "meta": {
+      "title": "Unser Maschinenpark - Zerspanungskapazität",
+      "description": "Detaillierte Übersicht über unseren umfangreichen Maschinenpark mit CNC-Vertikal-Bearbeitungszentren sowie Universaldreh- und Universalfräsmaschinen."
+    },
+    "title": "Unser Maschinenpark",
+    "subtitle": "Fertigungs- und Instandhaltungslösungen für jede Kapazität – mit unserem umfangreichen und modernen Maschinenpark."
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "Über uns - Erfahrung und Vertrauen",
+      "description": "Langjährige Erfahrung in der Zerspanung sowie in der Wartung und Instandsetzung von Maschinen, präzise Fertigungskompetenz und ein leistungsstarker Maschinenpark: Toker Teknik, Ihr Lösungspartner."
+    },
+    "title": "Über uns",
+    "subtitle": "Unser Weg in der industriellen Fertigung – geprägt von Erfahrung, Präzision und Vertrauen.",
+    "blocks": [
+      {
+        "title": "Wer wir sind",
+        "paragraphs": [
+          "Unser Unternehmen bietet hochwertige, zuverlässige und lösungsorientierte Dienstleistungen im Bereich der Zerspanung. Mit unserer Erfahrung und unserem leistungsstarken Maschinenpark fertigen wir präzise Teile nach hohen Standards für unterschiedlichste Branchen. Dank unserer umfangreichen Maschinenausstattung bearbeiten wir auch Werkstücke mit großem Durchmesser und großer Länge und reagieren mit konventionellen und CNC-Werkzeugmaschinen flexibel und schnell auf Kundenanforderungen.",
+          "Qualität, Kontinuität und Kundenzufriedenheit stehen in unseren Fertigungsprozessen an erster Stelle. Mit unseren Wartungs- und Instandsetzungsleistungen unterstützen wir nicht nur die Produktion, sondern auch die langfristige Leistungsfähigkeit der Betriebe unserer Kunden. Jedes Projekt bearbeiten wir mit größter Sorgfalt – ohne Kompromisse bei termingerechter Lieferung und hoher Qualität."
+        ]
+      },
+      {
+        "title": "Vision & Mission",
+        "paragraphs": [
+          "Mit unserer Branchenerfahrung bieten wir zuverlässige und hochwertige Dienstleistungen in der Zerspanung sowie in der Wartung und Instandsetzung von Maschinen. Mit unserem umfangreichen Maschinenpark fertigen wir Teile in unterschiedlichen Abmessungen und Ausführungen mit hoher Präzision. Unsere konventionellen und CNC-Werkzeugmaschinen ermöglichen schnelle und flexible Lösungen für Kundenanforderungen, während unsere Wartungs- und Instandsetzungsleistungen zu einem effizienten Betrieb und einer langen Lebensdauer der Maschinen beitragen.",
+          "Wir gehen jedes Projekt mit größter Sorgfalt an, mit dem Ziel, nach hohen Qualitätsstandards zu fertigen und die Erwartungen unserer Kunden bestmöglich zu erfüllen. Mit unserem erfahrenen Team und unserer technologischen Infrastruktur möchten wir Ihr zuverlässiger Lösungspartner für alle Anforderungen in der Zerspanung sein."
+        ]
+      }
+    ]
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Kontakt - Schreiben Sie uns",
+      "description": "Kontaktdaten, Standort im Industriegebiet Hasköy und Geschäftszeiten von Toker Teknik Makina. Kontaktieren Sie uns für Lösungen in der Zerspanung."
+    },
+    "title": "Kontakt",
+    "company": "TOKER TEKNİK MAKİNA VE BAKIM HİZMETLERİ LTD.ŞTİ.",
+    "mapTitle": "Standort von Toker Teknik Makina",
+    "labels": {
+      "address": "Zentrale & Werkstatt",
+      "phone": "Festnetz",
+      "gsm": "Mobil / WhatsApp",
+      "email": "E-Mail",
+      "hours": "Geschäftszeiten"
+    },
+    "actions": {
+      "location": "Karte",
+      "call": "Anrufen",
+      "whatsapp": "WhatsApp",
+      "mail": "E-Mail"
+    },
+    "hours": [
+      "Montag bis Freitag: 08:00 - 17:30",
+      "Samstag: 08:00 - 14:00"
+    ]
+  },
+  "footer": {
+    "about": "Als TOKER TEKNİK MAKİNA VE BAKIM HİZMETLERİ LTD.ŞTİ. sind wir mit unserem Expertenteam und unserem umfangreichen Maschinenpark Ihr zuverlässiger Lösungspartner.",
+    "corporate": "Unternehmen",
+    "services": "Leistungen",
+    "serviceLinks": [
+      "Zerspanung",
+      "Wartung & Instandsetzung",
+      "Überholung"
+    ],
+    "contact": "Kontaktdaten",
+    "email": "E-Mail",
+    "rights": "Toker Teknik. Alle Rechte vorbehalten.",
+    "creditBefore": "Entwickelt von",
+    "creditAfter": ""
+  },
+  "breadcrumbHome": "Startseite"
+}

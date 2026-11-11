@@ -6,7 +6,7 @@ export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = 'tr';
 
 // Yayında olan diller. Bir dilin çevirisi hazır olunca buraya eklenir.
-export const ACTIVE_LOCALES: Locale[] = ['tr'];
+export const ACTIVE_LOCALES: Locale[] = ['tr', 'en', 'de'];
 
 // Her sayfanın dillere göre adres adı. Türkçe ad aynı zamanda app/[lang] altındaki klasörün adıdır.
 export const PAGES = {

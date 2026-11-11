@@ -63,6 +63,8 @@
   line-height: 1.08;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+  /* Kelimeler satıra sığdığı için büyük başlıkta heceleme yapılmaz */
+  hyphens: manual;
 }
 
 /* Her satır kendi maskesinin içinden yukarı doğru açılır */

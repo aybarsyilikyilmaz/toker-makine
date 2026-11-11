@@ -298,3 +298,11 @@ button {
   margin: 1.5rem auto;
   border-radius: 2px;
 }
+/* Uzun kelimeler (özellikle Almanca) dar ekranda taşmasın: başlıklarda dile göre heceleme */
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}

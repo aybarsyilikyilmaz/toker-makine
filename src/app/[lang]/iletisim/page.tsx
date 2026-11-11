@@ -16,7 +16,8 @@ export async function generateMetadata({ params }: Params) {
   return pageMetadata({ locale: lang, page: 'contact', title: meta.title, description: meta.description });
 }
 
-const MAP_EMBED_URL = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1509.6!2d29.414!3d40.822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb21694a3d38e3%3A0xb94445842eb25dc3!2sToker%20Teknik%20Makina!5e0!3m2!1str!2str!4v1712011234567!5m2!1str!2str`;
+// Harita adresi; {lang} kısımları haritanın arayüz dilidir (tr, en, de)
+const MAP_EMBED_URL = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1509.6!2d29.414!3d40.822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb21694a3d38e3%3A0xb94445842eb25dc3!2sToker%20Teknik%20Makina!5e0!3m2!1s{lang}!2str!4v1712011234567!5m2!1s{lang}!2str`;
 const MAPS_PLACE_URL = 'https://www.google.com/maps/place//data=!4m2!3m1!1s0x14cb21694a3d38e3:0xb94445842eb25dc3';
 const ADDRESS = 'Sultan Orhan Mah. Hasköy Sanayi Sitesi NO:11A/15 Gebze / Kocaeli';
 
@@ -101,7 +102,7 @@ export default async function IletisimPage({ params }: Params) {
 
             <div className={styles.map}>
               <iframe
-                src={MAP_EMBED_URL}
+                src={MAP_EMBED_URL.replaceAll('{lang}', lang)}
                 title={t.mapTitle}
                 width="100%"
                 height="100%"

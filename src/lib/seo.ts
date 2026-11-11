@@ -4,7 +4,7 @@ import { ACTIVE_LOCALES, DEFAULT_LOCALE, LOCALE_INFO, localizedPath, type Locale
 import { getDictionary } from '@/i18n/dictionaries';
 
 // Paylaşım görseli: her dil için public/og/<dil>.jpg (yoksa Türkçe görsel kullanılır)
-const OG_IMAGES: Partial<Record<Locale, string>> = { tr: '/og/tr.jpg' };
+const OG_IMAGES: Partial<Record<Locale, string>> = { tr: '/og/tr.jpg', en: '/og/en.jpg', de: '/og/de.jpg' };
 
 export function ogImage(locale: Locale) {
   return {

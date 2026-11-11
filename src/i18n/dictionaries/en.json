@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "defaultTitle": "Toker Teknik | Machining and Machine Maintenance Services",
+    "description": "Toker Teknik delivers precise solutions in machining, machine maintenance and repair, backed by an expert team and an extensive machine park.",
+    "keywords": [
+      "machining",
+      "CNC machining",
+      "precision machining",
+      "machine maintenance",
+      "machine repair",
+      "overhaul",
+      "Gebze",
+      "Kocaeli",
+      "Turkey"
+    ],
+    "ogTitle": "Toker Teknik | Machining and Machine Maintenance Services",
+    "ogDescription": "With our expert team, we deliver precise solutions in machining, machine maintenance and repair.",
+    "twitterTitle": "Toker Teknik",
+    "twitterDescription": "Precision machining and professional machine maintenance solutions.",
+    "ogImageAlt": "Toker Teknik - Machining, Machine Maintenance and Repair Services"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "machines": "Machine Park",
+    "about": "About Us",
+    "contact": "Contact",
+    "homeAria": "Toker Teknik home page",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "line1": "Industrial",
+      "accent1": "Solutions,",
+      "line2": "Technical",
+      "accent2": "Excellence",
+      "text": "High precision and reliable engineering for your projects with Toker Teknik Makina ve Bakım Hizmetleri Ltd. Şti.",
+      "ctaPrimary": "Explore Our Services",
+      "ctaSecondary": "Contact Us"
+    },
+    "trustLabel": "Key capabilities",
+    "trust": {
+      "precision": {
+        "title": "Precision Manufacturing",
+        "text": "To high quality standards"
+      },
+      "engineering": {
+        "title": "Engineering",
+        "text": "Innovative technical solutions"
+      },
+      "quality": {
+        "title": "Industrial Quality",
+        "text": "Production to ISO standards"
+      },
+      "service": {
+        "title": "Maintenance & Repair",
+        "text": "Continuous operational support"
+      }
+    },
+    "about": {
+      "title": "About Us",
+      "paragraphs": [
+        "Toker Teknik Makina provides high-quality, reliable and solution-oriented services in the field of machining. With our experience and powerful machine park, we manufacture precise parts to high standards for a wide range of industries.",
+        "Our extensive machining capacity allows us to machine large-diameter and long workpieces, and with both conventional and CNC machine tools we respond flexibly and quickly to customer requirements. Through our maintenance and repair services, we also help keep machines running efficiently."
+      ]
+    },
+    "machines": {
+      "title": "Our Machine Park",
+      "text": "Production and maintenance solutions for every capacity, backed by our extensive and modern machine park."
+    },
+    "references": {
+      "title": "Our References",
+      "text": "The solution partners who trust us and with whom we create value together."
+    },
+    "whatsappAria": "Message us on WhatsApp"
+  },
+  "machines": {
+    "categories": {
+      "cnc": "CNC Vertical Machining Centers",
+      "lathe": "Universal Lathes",
+      "milling": "Universal Milling, Slotting and Equipment"
+    },
+    "items": {
+      "neway": {
+        "name": "NEWAY CNC Vertical Machining Center",
+        "detail": "X:1100 mm / Y:600 mm / Z:600 mm"
+      },
+      "haas": {
+        "name": "HAAS VF2 CNC Machining Center",
+        "detail": "X:800 mm / Y:400 mm / Z:500 mm"
+      },
+      "lathe1200": {
+        "name": "Lathe Ø1200 x 5000",
+        "detail": "Machining of large-diameter and long workpieces"
+      },
+      "lathe660": {
+        "name": "Lathe Ø660 x 3000",
+        "detail": "Versatile turning capacity"
+      },
+      "mill": {
+        "name": "Universal Milling Machine",
+        "detail": "Gear cutting and slot milling"
+      },
+      "slotter200": {
+        "name": "Vertical Slotting Machine 200",
+        "detail": "Precision keyway slotting"
+      },
+      "slotter320": {
+        "name": "Vertical Slotting Machine 320",
+        "detail": "High-capacity keyway slotting"
+      },
+      "easylaser": {
+        "name": "Easy-Laser Shaft Alignment System",
+        "detail": "Professional coupling alignment and measuring system"
+      }
+    }
+  },
+  "servicesPage": {
+    "meta": {
+      "title": "Our Services - Machining and Maintenance",
+      "description": "We deliver industrial solutions through machining, CNC machining, machine maintenance, repair and overhaul services. Toker Teknik and its expert team are at your side."
+    },
+    "title": "Our Services",
+    "subtitle": "Your solution partner for technical excellence and industrial expertise.",
+    "services": [
+      {
+        "title": "Machining",
+        "desc": "Our machining services cover the production of precise, high-quality parts for the needs of a wide range of industries. Thanks to our extensive machine park and technical infrastructure, we offer solutions tailored to customer requirements for both one-off parts and series production.",
+        "items": [
+          "Parts manufactured to a wide range of dimensions and tolerances",
+          "Turning and milling (conventional & CNC)",
+          "Machining of large-diameter and long workpieces",
+          "Precision machining to exact dimensions",
+          "One-off parts and series production",
+          "Manufacturing and rework to technical drawings"
+        ]
+      },
+      {
+        "title": "Machine Maintenance and Repair",
+        "desc": "Our machine maintenance and repair services provide professional solutions that keep equipment running efficiently, safely and without interruption. With our experienced team, we carry out fault diagnosis, maintenance and overhaul work with great care.",
+        "items": [
+          "Scheduled preventive maintenance",
+          "Fault diagnosis and repair",
+          "Part replacement and overhaul",
+          "Machine performance improvement",
+          "On-site maintenance and service"
+        ]
+      }
+    ]
+  },
+  "machinesPage": {
+    "meta": {
+      "title": "Our Machine Park - Machining Capacity",
+      "description": "A detailed gallery of our extensive machine park, equipped with CNC vertical machining centers, universal lathes and milling machines."
+    },
+    "title": "Our Machine Park",
+    "subtitle": "Production and maintenance solutions for every capacity, backed by our extensive and modern machine park."
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "About Us - Experience and Trust",
+      "description": "Years of experience in machining and machine maintenance and repair, precision manufacturing capability and a powerful machine park: Toker Teknik, your solution partner."
+    },
+    "title": "About Us",
+    "subtitle": "Our journey in industrial manufacturing, built on experience, precision and trust.",
+    "blocks": [
+      {
+        "title": "Who We Are",
+        "paragraphs": [
+          "Our company provides high-quality, reliable and solution-oriented services in the field of machining. With our experience and powerful machine park, we manufacture precise parts to high standards for a wide range of industries. Our extensive machining capacity allows us to machine large-diameter and long workpieces, and with both conventional and CNC machine tools we respond flexibly and quickly to customer requirements.",
+          "Quality, continuity and customer satisfaction are the priorities of our production processes. With our machine maintenance and repair services, we support not only production but also the long-term sustainability of our customers' operations. We approach every project with care and never compromise on on-time delivery and high quality."
+        ]
+      },
+      {
+        "title": "Our Vision & Mission",
+        "paragraphs": [
+          "Drawing on our industry experience, we provide reliable, high-quality services in machining and machine maintenance and repair. With our extensive machine park, we manufacture parts of various dimensions and specifications with high precision. Our conventional and CNC machine tools allow us to respond quickly and flexibly to customer requirements, while our maintenance and repair services help machines run efficiently and last longer.",
+          "We approach every project with care, aiming to manufacture to high quality standards and to meet our customers' expectations in the best possible way. With our experienced team and technological infrastructure, our goal is to be a reliable solution partner for all your machining needs."
+        ]
+      }
+    ]
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Contact - Get in Touch",
+      "description": "Contact details, location in the Hasköy Industrial Estate and working hours of Toker Teknik Makina. Get in touch with us for machining solutions."
+    },
+    "title": "Contact",
+    "company": "TOKER TEKNİK MAKİNA VE BAKIM HİZMETLERİ LTD.ŞTİ.",
+    "mapTitle": "Toker Teknik Makina location",
+    "labels": {
+      "address": "Head Office & Workshop",
+      "phone": "Landline",
+      "gsm": "Mobile / WhatsApp",
+      "email": "Email",
+      "hours": "Working Hours"
+    },
+    "actions": {
+      "location": "Map",
+      "call": "Call",
+      "whatsapp": "WhatsApp",
+      "mail": "Email"
+    },
+    "hours": [
+      "Monday to Friday: 08:00 - 17:30",
+      "Saturday: 08:00 - 14:00"
+    ]
+  },
+  "footer": {
+    "about": "As TOKER TEKNİK MAKİNA VE BAKIM HİZMETLERİ LTD.ŞTİ., we are your reliable solution partner with our expert team and extensive machine park.",
+    "corporate": "Company",
+    "services": "Services",
+    "serviceLinks": [
+      "Machining",
+      "Maintenance & Repair",
+      "Overhaul"
+    ],
+    "contact": "Contact Information",
+    "email": "Email",
+    "rights": "Toker Teknik. All rights reserved.",
+    "creditBefore": "Developed by",
+    "creditAfter": ""
+  },
+  "breadcrumbHome": "Home"
+}
