@@ -1,24 +1,28 @@
-/* Global Transitions */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ===== Hero ===== */
+@keyframes lineUp {
+  from { transform: translateY(105%); }
+  to { transform: none; }
 }
 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Masaüstü: hero tam ekran; yazı ortada, rozet şeridi en altta ve ekranın içinde */
 .hero {
   position: relative;
-  height: 100vh;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  height: 100vh;
+  height: 100svh;
+  min-height: 640px;
   overflow: hidden;
-  padding-top: 155px;
 }
 
 .heroBackground {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
 }
 
 .heroVideo {
@@ -27,106 +31,280 @@
   object-fit: cover;
 }
 
+/* Yazının okunması için solu koyulaştırır, videonun sağ tarafı açık kalır */
 .heroOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.1) 100%);
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.28) 42%, rgba(0, 0, 0, 0) 72%);
+}
+
+.heroStage {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 75px 0 32px; /* üstte header payı */
 }
 
 .heroContent {
-  position: relative;
-  z-index: 10;
-  color: var(--white);
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  text-align: left;
+  color: var(--white);
 }
 
-.heroContent h1 {
+.heroTitle {
+  margin: 0 0 1.1rem;
   color: var(--white);
-  font-size: 3.2rem;
-  line-height: 1.1;
-  margin-bottom: 1.2rem;
+  font-size: clamp(2rem, 1.1rem + 2.4vw, 2.9rem);
   font-weight: 800;
-  letter-spacing: -1.5px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
-.heroContent h1 span {
+/* Her satır kendi maskesinin içinden yukarı doğru açılır */
+.line {
+  display: block;
+  overflow: hidden;
+  /* İ harfinin noktası ve alt boşluk kırpılmasın */
+  padding: 0.12em 0 0.06em;
+  margin: -0.12em 0 -0.06em;
+}
+
+.lineInner {
+  display: inline-block;
+  animation: lineUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.line + .line .lineInner {
+  animation-delay: 0.2s;
+}
+
+.accent {
   color: var(--primary-red);
 }
 
-.heroContent p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin-bottom: 2rem;
-  color: rgba(255, 255, 255, 0.9);
+.heroText {
+  max-width: 34rem;
+  margin: 0 0 2rem;
+  font-size: 1.05rem;
   line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
 }
 
 .heroCta {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 12px;
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.52s both;
 }
 
-/* Trust Badges */
-.trustSection {
-  padding: 0;
+/* ===== Öne çıkan yetkinlikler ===== */
+/* Masaüstü: videonun üzerinde koyu, yarı saydam cam şerit */
+.trust {
   position: relative;
-  z-index: 20;
-  margin-top: -110px; 
+  z-index: 10;
+  padding-bottom: 32px;
 }
 
 .trustGrid {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 12px;
-  background-color: #FFFFFF;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-  border-bottom: 4px solid var(--primary-red);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background-color: rgba(12, 12, 12, 0.42);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  backdrop-filter: blur(14px) saturate(120%);
+  overflow: hidden;
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both;
 }
 
 .trustItem {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 14px;
+  padding: 22px 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background-color 0.3s ease;
 }
 
-.symbolWrapper {
-  width: 55px;
-  height: 55px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.trustItem:first-child {
+  border-left: none;
+}
+
+.trustItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.trustIcon {
+  display: grid;
+  place-items: center;
   flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.symbolWrapper img {
-  width: 100%;
-  height: auto;
+.trustIcon img {
+  width: 32px;
+  height: 32px;
+}
+
+.trustItem:hover .trustIcon {
+  transform: translateY(-3px);
 }
 
 .trustTitle {
-  color: var(--navy) !important;
-  font-size: 1.05rem;
-  font-weight: 800;
-  margin-bottom: 0.1rem;
+  margin: 0 0 3px;
+  color: #fff !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .trustText {
-  font-size: 0.82rem;
-  color: #444 !important;
   margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+@media (max-width: 1100px) {
+  .trustGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trustItem {
+    border-left: none;
+  }
+
+  .trustItem:nth-child(2n) {
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .trustItem:nth-child(n + 3) {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* Mobil: hero tam ekranı kaplar, yazı aşağıda; rozetler hero'nun altında ayrı kartlar */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .heroBackground,
+  .heroOverlay {
+    bottom: auto;
+    height: max(100svh, 560px);
+    overflow: hidden;
+  }
+
+  .heroOverlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.15) 35%, rgba(0, 0, 0, 0.72) 100%);
+  }
+
+  .heroStage {
+    flex: none;
+    align-items: flex-end;
+    min-height: max(100svh, 560px);
+    /* altta WhatsApp butonu (52px + 16px boşluk) butonlarla çakışmasın */
+    padding: 75px 0 88px;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.7rem, 7.4vw, 2.1rem);
+    margin-bottom: 0.8rem;
+  }
+
+  .heroText {
+    font-size: 0.95rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .trust {
+    padding: 20px 0 0;
+    background-color: #f1f1f1;
+  }
+
+  .trustGrid {
+    gap: 10px;
+    border: none;
+    border-radius: 0;
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    overflow: visible;
+    animation: none;
+  }
+
+  .trustItem,
+  .trustItem:nth-child(2n),
+  .trustItem:nth-child(n + 3) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    background-color: #fff;
+  }
+
+  .trustItem:hover {
+    background-color: #fff;
+  }
+
+  .trustIcon {
+    width: 44px;
+    height: 44px;
+    background-color: #fdf1f1;
+  }
+
+  .trustIcon img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .trustTitle {
+    color: var(--navy) !important;
+    font-size: 0.8rem;
+  }
+
+  .trustText {
+    color: #5a5a5a !important;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroCta {
+    flex-direction: column;
+  }
+
+  .heroCta a {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lineInner,
+  .heroText,
+  .heroCta,
+  .trustGrid {
+    animation: none;
+  }
 }
 
 /* Makine Parkuru Gallery */
@@ -292,33 +470,6 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 992px) {
-  .trustSection {
-    margin-top: 40px !important;
-    padding: 0 15px;
-  }
-
-  .trustGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 25px;
-  }
-
-  .trustItem {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .symbolWrapper {
-    width: 60px;
-    height: 60px;
-  }
-
-  .heroContent h1 {
-    font-size: 2.2rem;
-  }
-}
 
 @media (max-width: 768px) {
   .machineGrid {
@@ -341,11 +492,5 @@
     height: 80px;
     width: 160px;
     padding: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .trustGrid {
-    grid-template-columns: 1fr;
   }
 }

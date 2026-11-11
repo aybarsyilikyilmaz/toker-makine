@@ -54,6 +54,13 @@ const MACHINE_PARKS = [
   }
 ];
 
+const TRUST_BADGES = [
+  { id: 'precision', title: 'Hassas Üretim', text: 'Yüksek kalite standartlarında' },
+  { id: 'engineering', title: 'Mühendislik', text: 'Yenilikçi teknik çözümler' },
+  { id: 'quality', title: 'Endüstriyel Kalite', text: 'ISO standartlarında üretim' },
+  { id: 'service', title: 'Bakım & Onarım', text: 'Kesintisiz işletme desteği' },
+];
+
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
@@ -82,51 +89,51 @@ export default function Home() {
           </video>
         </div>
         <div className={styles.heroOverlay}></div>
-        <div className={styles.heroContent}>
-          <h1 className="animate-fade-in">
-            Endüstriyel <span>Çözümler</span>,<br />Teknik <span>Üstünlük</span>
-          </h1>
-          <p className="animate-fade-in delay-1">
-            Toker Teknik Makina ve Bakım Hizmetleri Ltd. Şti. ile projelerinizde yüksek hassasiyet ve güvenilir mühendislik.
-          </p>
+        <div className={styles.heroStage}>
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>
+              <span className={styles.line}>
+                <span className={styles.lineInner}>
+                  Endüstriyel <span className={styles.accent}>Çözümler,</span>
+                </span>
+              </span>{' '}
+              <span className={styles.line}>
+                <span className={styles.lineInner}>
+                  Teknik <span className={styles.accent}>Üstünlük</span>
+                </span>
+              </span>
+            </h1>
+            <p className={styles.heroText}>
+              Toker Teknik Makina ve Bakım Hizmetleri Ltd. Şti. ile projelerinizde yüksek hassasiyet ve güvenilir mühendislik.
+            </p>
 
-          <div className={`${styles.heroCta} animate-fade-in delay-2`}>
-            <Link href="/hizmetler" className="btn-primary">
-              Hizmetleri Keşfet <ArrowRight size={20} />
-            </Link>
-            <Link href="/iletisim" className="btn-outline" style={{ color: '#FFF', borderColor: '#FFF' }}>
-              İletişime Geç
-            </Link>
+            <div className={styles.heroCta}>
+              <Link href="/hizmetler" className="btn-primary">
+                Hizmetleri Keşfet <ArrowRight size={18} className="btn-arrow" aria-hidden="true" />
+              </Link>
+              <Link href="/iletisim" className="btn-outline btn-on-dark">
+                İletişime Geç
+              </Link>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* Trust Badges - Optimized with Priority image fetching for near-fold */}
-      <section className={styles.trustSection}>
-        <div className="container">
-          <div className={styles.trustGrid}>
-            {[
-              { id: 'precision', title: "Hassas Üretim", text: "Yüksek kalite standartlarında" },
-              { id: 'engineering', title: "Mühendislik", text: "Yenilikçi teknik çözümler" },
-              { id: 'quality', title: 'Endüstriyel Kalite', text: 'ISO standartlarında üretim' },
-              { id: 'service', title: "Bakım & Onarım", text: "Kesintisiz işletme desteği" }
-            ].map((badge) => (
-              <div key={badge.id} className={styles.trustItem}>
-                <div className={styles.symbolWrapper}>
-                  <img
-                    src={`/icons/${badge.id}.webp`}
-                    alt={badge.title}
-                    width={80}
-                    height={80}
-                    loading="eager"
-                  />
-                </div>
-                <div className={styles.textWrapper}>
-                  <h3 className={styles.trustTitle}>{badge.title}</h3>
-                  <p className={styles.trustText}>{badge.text}</p>
-                </div>
-              </div>
-            ))}
+        {/* Öne çıkan yetkinlikler: masaüstünde hero içinde, mobilde hero altında */}
+        <div className={styles.trust}>
+          <div className="container">
+            <ul className={styles.trustGrid} aria-label="Öne çıkan yetkinlikler">
+              {TRUST_BADGES.map((badge) => (
+                <li key={badge.id} className={styles.trustItem}>
+                  <span className={styles.trustIcon}>
+                    <img src={`/icons/${badge.id}.webp`} alt="" width={192} height={192} />
+                  </span>
+                  <div>
+                    <h3 className={styles.trustTitle}>{badge.title}</h3>
+                    <p className={styles.trustText}>{badge.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

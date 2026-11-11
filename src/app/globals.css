@@ -119,45 +119,81 @@ button {
   background-color: #F1F1F1;
 }
 
-/* Buttons */
+/* Butonlar */
+.btn-primary,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border: 1.5px solid transparent;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.15s ease;
+}
+
 .btn-primary {
   background-color: var(--primary-red);
   color: var(--white);
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-transform: uppercase;
-  font-size: 0.9rem;
 }
 
 .btn-primary:hover {
   background-color: var(--primary-red-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(227, 6, 19, 0.3);
+  box-shadow: 0 8px 22px rgba(227, 6, 19, 0.28);
 }
 
 .btn-outline {
   background-color: transparent;
   color: var(--navy);
-  padding: 0.75rem 2rem;
-  border: 2px solid var(--navy);
-  border-radius: 4px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-transform: uppercase;
-  font-size: 0.9rem;
+  border-color: currentColor;
 }
 
 .btn-outline:hover {
   background-color: var(--navy);
+  border-color: var(--navy);
   color: var(--white);
+}
+
+/* Koyu zemin (video) üzerindeki ikincil buton */
+.btn-on-dark {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-on-dark:hover {
+  background-color: var(--white);
+  border-color: var(--white);
+  color: var(--navy);
+}
+
+.btn-primary:active,
+.btn-outline:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:focus-visible,
+.btn-outline:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Hover'da ok sağa kayar */
+.btn-arrow {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-primary:hover .btn-arrow {
+  transform: translateX(4px);
 }
 
 /* Floating WhatsApp Button */
@@ -184,6 +220,15 @@ button {
 .whatsapp-float:hover {
   transform: scale(1.1);
   background-color: var(--primary-red-hover);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    right: 16px;
+    bottom: 16px;
+  }
 }
 
 /* Section Title */
