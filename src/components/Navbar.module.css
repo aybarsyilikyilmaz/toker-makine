@@ -286,7 +286,7 @@
   }
 }
 
-/* ===== Dil seçici (birden fazla dil yayındayken görünür) ===== */
+/* ===== Dil seçici yeri (görünüm LanguageSwitcher.module.css içinde) ===== */
 .langItem {
   display: flex;
   align-items: center;
@@ -294,46 +294,11 @@
   border-left: 1px solid #e6e6e6;
 }
 
-.langSwitch {
-  display: flex;
-  gap: 4px;
-}
-
-.langLink {
-  padding: 4px 7px;
-  border-radius: 6px;
-  color: #8a8a8a;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  transition: color 0.25s ease, background-color 0.25s ease;
-}
-
-.langLink:hover {
-  color: var(--primary-red);
-}
-
-.langActive {
-  color: var(--navy);
-  background-color: #f3f3f3;
-}
-
-.langLink:focus-visible {
-  outline: 2px solid var(--primary-red);
-  outline-offset: 2px;
-}
-
 @media (max-width: 992px) {
   .langItem {
     margin-top: 12px;
-    padding: 20px 0 0;
+    padding: 24px 0 0;
     border-left: none;
     border-top: 1px solid #ececec;
-  }
-
-  .langLink {
-    padding: 8px 12px;
-    font-size: 0.95rem;
   }
 }

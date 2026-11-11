@@ -1,0 +1,187 @@
+.root {
+  --ls-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+
+/* Yuvarlak bayrak; ince iç çizgi beyaz alanların kaybolmasını önler */
+.flag {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.flag svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.flag::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Masaüstü: açılır menü ===== */
+.dropdown {
+  position: relative;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px 5px 5px;
+  border: 1px solid #e6e6e6;
+  border-radius: 999px;
+  background-color: #fff;
+  color: var(--navy);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.trigger:hover,
+.triggerOpen {
+  border-color: #d4d4d4;
+  background-color: #fafafa;
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--primary-red);
+  outline-offset: 2px;
+}
+
+.code {
+  line-height: 1;
+}
+
+.chevron {
+  color: #8a8a8a;
+  transition: transform 0.35s var(--ls-ease);
+}
+
+.triggerOpen .chevron {
+  transform: rotate(180deg);
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 20;
+  min-width: 190px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top right;
+  transition: opacity 0.2s ease, transform 0.3s var(--ls-ease), visibility 0s linear 0.3s;
+}
+
+.panelOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.2s ease, transform 0.3s var(--ls-ease), visibility 0s;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: #3a3a3a;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.option:hover {
+  background-color: #f5f5f5;
+  color: var(--navy);
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--primary-red);
+  outline-offset: -2px;
+}
+
+.optionActive {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.name {
+  flex: 1;
+}
+
+.check {
+  color: var(--primary-red);
+}
+
+/* ===== Mobil menü: hap düğmeler ===== */
+.pills {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .dropdown {
+    display: none;
+  }
+
+  .pills {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px 7px 7px;
+    border: 1px solid #e6e6e6;
+    border-radius: 999px;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .pillActive {
+    border-color: var(--primary-red);
+    background-color: #fdf1f1;
+    color: var(--navy);
+  }
+
+  .pill:focus-visible {
+    outline: 2px solid var(--primary-red);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .panelOpen,
+  .chevron {
+    transition: none;
+  }
+}

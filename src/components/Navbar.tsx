@@ -4,7 +4,8 @@ import { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { usePathname, useSelectedLayoutSegment } from 'next/navigation';
-import { LOCALE_INFO, localizedPath, pageFromSegment, type Locale, type PageKey } from '@/i18n/routes';
+import { localizedPath, pageFromSegment, type Locale, type PageKey } from '@/i18n/routes';
+import LanguageSwitcher from './LanguageSwitcher';
 import styles from './Navbar.module.css';
 
 type NavLink = { key: PageKey; href: string; label: string };
@@ -126,22 +127,13 @@ export default function Navbar({ locale, links, locales, labels }: NavbarProps) 
 
             {locales.length > 1 && (
               <li className={styles.langItem} style={{ '--i': links.length } as CSSProperties}>
-                <div className={styles.langSwitch} role="group" aria-label={labels.language}>
-                  {locales.map((code) => (
-                    <Link
-                      key={code}
-                      href={localizedPath(code, currentPage ?? 'home')}
-                      hrefLang={LOCALE_INFO[code].bcp47}
-                      lang={code}
-                      title={LOCALE_INFO[code].label}
-                      aria-current={code === locale ? 'true' : undefined}
-                      className={`${styles.langLink} ${code === locale ? styles.langActive : ''}`}
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {LOCALE_INFO[code].short}
-                    </Link>
-                  ))}
-                </div>
+                <LanguageSwitcher
+                  locale={locale}
+                  locales={locales}
+                  page={currentPage ?? 'home'}
+                  label={labels.language}
+                  onNavigate={() => setMenuOpen(false)}
+                />
               </li>
             )}
           </ul>
