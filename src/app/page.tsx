@@ -139,17 +139,17 @@ export default function Home() {
       </section>
 
       {/* Hakkımızda Section */}
-      <section className="section bg-light" id="hakkimizda">
+      <section className={`section bg-light ${styles.about}`} id="hakkimizda">
         <div className="container">
           <div className="section-title">
             <h2 className="text-red">Hakkımızda</h2>
             <div className="title-line"></div>
           </div>
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-            <p className="text-gray" style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+          <div className={styles.aboutText}>
+            <p>
               Toker Teknik Makina, talaşlı imalat alanında kaliteli, güvenilir ve çözüm odaklı hizmet sunmak amacıyla faaliyet göstermektedir. Sahip olduğumuz tecrübe ve güçlü makine parkurumuz ile farklı sektörlere yönelik hassas ve yüksek standartlarda üretim gerçekleştirmekteyiz.
             </p>
-            <p className="text-gray" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
+            <p>
               Geniş makine altyapımız sayesinde büyük çaplı ve uzun parça işleme kabiliyetine sahip olup hem konvansiyonel hem de CNC tezgahlarımızla müşteri taleplerine esnek ve hızlı çözümler sunmaktayız. Bakım ve onarım hizmetlerimizle de makinelerin verimli çalışmasına katkı sağlıyoruz.
             </p>
           </div>
