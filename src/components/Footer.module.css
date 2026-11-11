@@ -20,7 +20,7 @@
 }
 
 .logoImage {
-  max-width: 320px; /* Bit smaller footer logo */
+  max-width: 166px; /* Kırpılmış logo: footer'daki görünür boyut aynı kalır */
   height: auto;
   margin-bottom: 12px;
 }

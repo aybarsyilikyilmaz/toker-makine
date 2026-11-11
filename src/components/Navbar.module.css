@@ -1,222 +1,234 @@
+/* ===== Header ===== */
 .root {
-  height: 75px;
-  width: 100%;
+  --nav-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  padding: 0 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--white);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  border-bottom: 2px solid var(--primary-red);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hidden {
-  height: 70px;
-  background-color: #fff;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid var(--gold);
-}
-
-.hidden .link {
-  color: var(--navy);
-}
-
-.container {
   width: 100%;
-  max-width: 1400px;
+  height: 75px;
+  background-color: var(--white);
+  border-bottom: 2px solid var(--primary-red);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0);
+  transition: height 0.35s var(--nav-ease), box-shadow 0.35s var(--nav-ease);
+}
+
+/* Sayfa kaydırılınca header biraz incelir ve gölge belirir */
+.scrolled {
+  height: 64px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Sayfa içeriğiyle aynı genişlik ve kenar boşluğu (.container: 1280px) */
+.inner {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.navMain {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  height: 100%;
+  gap: 32px;
 }
 
 .logoLink {
   display: flex;
   align-items: center;
-  height: 100%;
+  flex-shrink: 0;
   text-decoration: none;
 }
 
 .logo {
-  height: 68px;
-  width: auto;
   display: block;
+  height: 40px;
+  width: auto;
+  transition: height 0.35s var(--nav-ease);
 }
 
-.navRight {
+.scrolled .logo {
+  height: 34px;
+}
+
+/* ===== Masaüstü menü ===== */
+.menuWrap {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 40px;
-  /* Gap between Menu and CTA */
 }
 
 .menu {
   display: flex;
-  list-style: none;
+  align-items: center;
   gap: 32px;
-  padding: 0;
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .link {
+  position: relative;
+  display: block;
+  padding: 6px 0;
   color: var(--navy);
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
-  position: relative;
   font-size: 0.95rem;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
+  transition: color 0.25s ease;
 }
 
-.link.active {
+.lit {
   color: var(--primary-red);
 }
 
-.link.active .linkText::after {
-  transform: scaleX(1);
+.link:focus-visible {
+  outline: 2px solid var(--primary-red);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
-/* Dim active link when hovering over the menu siblings */
-.menu:hover .link.active {
-  color: var(--navy);
-}
-
-.menu:hover .link.active .linkText::after {
-  transform: scaleX(0);
-}
-
-/* Ensure current hovered link stays/becomes red */
-.menu .link:hover {
-  color: var(--primary-red) !important;
-}
-
-.menu .link:hover .linkText::after {
-  transform: scaleX(1) !important;
-}
-
-.linkText::after {
-  content: "";
+/* Bağlantılar arasında kayan tek kırmızı çizgi */
+.indicator {
   position: absolute;
   left: 0;
-  bottom: -4px;
-  width: 100%;
+  bottom: -2px;
   height: 2px;
   background-color: var(--primary-red);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease-in-out;
+  border-radius: 2px;
+  pointer-events: none;
 }
 
-.link:hover {
-  color: var(--primary-red);
+.indicatorReady {
+  transition:
+    transform 0.45s var(--nav-ease),
+    width 0.45s var(--nav-ease),
+    opacity 0.25s ease;
 }
 
-.linkText:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+/* Sayfa ilk açıldığında logo ve bağlantılar sırayla belirir */
+@keyframes navIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+@media (min-width: 993px) {
+  .logoLink {
+    animation: navIn 0.6s var(--nav-ease) both;
+  }
+
+  .menu li {
+    animation: navIn 0.6s var(--nav-ease) both;
+    animation-delay: calc(80ms + var(--i, 0) * 50ms);
+  }
 }
 
-.cta {
-  background-color: var(--primary-red);
-  color: #fff !important;
-  padding: 10px 24px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.cta:hover {
-  background-color: var(--navy);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(227, 6, 19, 0.2);
-}
-
+/* ===== Hamburger ===== */
 .hamburger {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
+  position: relative;
+  z-index: 3;
+  width: 28px;
+  height: 20px;
+  padding: 0;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
-  z-index: 1001;
 }
 
 .hamburger span {
+  position: absolute;
+  left: 0;
   width: 100%;
-  height: 3px;
+  height: 2.5px;
   background-color: var(--navy);
-  border-radius: 10px;
-  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transform-origin: left center;
+  border-radius: 2px;
+  transition: transform 0.4s var(--nav-ease), opacity 0.2s ease;
 }
 
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 50%; margin-top: -1.25px; }
+.hamburger span:nth-child(3) { bottom: 0; }
+
+/* Üç çizgi ortada birleşip düzgün bir X oluşturur */
 .hamburgerOpen span:nth-child(1) {
-  transform: rotate(45deg);
+  transform: translateY(8.75px) rotate(45deg);
 }
 
 .hamburgerOpen span:nth-child(2) {
-  width: 0%;
   opacity: 0;
+  transform: scaleX(0.3);
 }
 
 .hamburgerOpen span:nth-child(3) {
-  transform: rotate(-45deg);
+  transform: translateY(-8.75px) rotate(-45deg);
 }
 
+.hamburger:focus-visible {
+  outline: 2px solid var(--primary-red);
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+
+.backdrop {
+  display: none;
+}
+
+/* ===== Mobil ===== */
 @media (max-width: 992px) {
   .logo {
-    height: 54px;
-    width: auto;
+    height: 32px;
+  }
+
+  .scrolled .logo {
+    height: 30px;
   }
 
   .hamburger {
-    display: flex;
+    display: block;
+  }
+
+  .indicator {
+    display: none;
   }
 
   .menu {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 80%;
+    right: 0;
+    z-index: 2;
+    width: min(80%, 360px);
     height: 100vh;
-    background-color: #FFF;
+    height: 100dvh;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 30px;
-    transition: all 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-    z-index: 1000;
+    gap: 28px;
+    background-color: #fff;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.5s var(--nav-ease), visibility 0s linear 0.5s;
   }
 
   .menuOpen {
-    right: 0;
+    transform: none;
+    visibility: visible;
+    transition: transform 0.5s var(--nav-ease), visibility 0s;
+  }
+
+  /* Menü açılırken bağlantılar sırayla kayarak gelir */
+  .menu li {
+    opacity: 0;
+    transform: translateX(24px);
+    transition: opacity 0.3s ease, transform 0.5s var(--nav-ease);
+  }
+
+  .menuOpen li {
+    opacity: 1;
+    transform: none;
+    transition-delay: calc(120ms + var(--i, 0) * 50ms);
   }
 
   .link {
@@ -224,7 +236,52 @@
     font-weight: 800;
   }
 
-  .cta {
-    display: none;
+  .link.active {
+    color: var(--primary-red);
+  }
+
+  .link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--primary-red);
+    border-radius: 2px;
+  }
+
+  /* Menünün arkasında sayfayı karartan katman */
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .backdropOpen {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root,
+  .logo,
+  .indicatorReady,
+  .menu,
+  .menu li,
+  .hamburger span,
+  .backdrop {
+    transition: none !important;
+  }
+
+  .logoLink,
+  .menu li {
+    animation: none !important;
   }
 }
