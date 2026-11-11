@@ -94,12 +94,12 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomContent}`}>
           <p>&copy; {new Date().getFullYear()} Toker Teknik. Tüm hakları saklıdır.</p>
-          <p className={styles.developerCredit}>
-            Developed and Designed by{' '}
-            <a href="https://wetase.com" target="_blank" rel="noreferrer">
-              Wetase Yazılım
-            </a>
-          </p>
+          <a href="https://anveb.com" target="_blank" rel="noopener noreferrer" className={styles.credit}>
+            <span className={styles.creditLogo}>
+              <span className={styles.srOnly}>anveb</span>
+            </span>
+            <span>tarafından geliştirildi</span>
+          </a>
         </div>
       </div>
     </footer>
