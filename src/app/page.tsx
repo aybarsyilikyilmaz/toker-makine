@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { preload } from 'react-dom';
@@ -156,8 +155,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Makine Parkuru Section - New Visual Layout */}
-      <section className="section bg-white" style={{ paddingTop: '100px' }}>
+      {/* Makine Parkuru: kategori satırları (solda başlık, sağda 2 sütun kart) */}
+      <section className={`section bg-white ${styles.tightTitle}`}>
         <div className="container">
           <div className="section-title">
             <h2 className="text-red">Makine Parkurumuz</h2>
@@ -165,34 +164,24 @@ export default function Home() {
             <p>Geniş ve teknolojik makine parkurumuzla her kapasitede üretim ve bakım çözümleri.</p>
           </div>
 
-          <div className={styles.machineGallery}>
+          <div className={styles.mGroups}>
             {MACHINE_PARKS.map((group, i) => (
-              <div key={i} className={styles.machineGroup}>
-                <h3 className={styles.groupTitle}>{group.category}</h3>
-                <div className={styles.machineGrid}>
-                  {group.items.map((item, idx) => (
-                    <div key={idx} className={styles.machineCard}>
-                      <div className={styles.machineImageWrapper}>
-                        {item.image ? (
-                          <img 
-                            src={item.image} 
-                            alt={item.name} 
-                            className={styles.machineImage} 
-                            loading="lazy" 
-                          />
-                        ) : (
-                          <div className={styles.noImage}>
-                            <span>GÖRSEL HAZIRLANIYOR</span>
-                          </div>
-                        )}
-                        <div className={styles.cardOverlay}>
-                          <p>{item.detail}</p>
-                        </div>
+              <div key={group.category} className={styles.mGroup}>
+                <div className={styles.mHead}>
+                  <span className={styles.mIndex}>{String(i + 1).padStart(2, '0')}</span>
+                  <h3 className={styles.mGroupTitle}>{group.category}</h3>
+                </div>
+                <div className={styles.mGrid}>
+                  {group.items.map((item) => (
+                    <article key={item.name} className={styles.mCard}>
+                      <div className={styles.mMedia}>
+                        <img src={item.image} alt={item.name} loading="lazy" width={800} height={600} />
                       </div>
-                      <div className={styles.machineInfo}>
-                        <h4>{item.name}</h4>
+                      <div className={styles.mBody}>
+                        <h4 className={styles.mName}>{item.name}</h4>
+                        <p className={styles.mSpec}>{item.detail}</p>
                       </div>
-                    </div>
+                    </article>
                   ))}
                 </div>
               </div>
