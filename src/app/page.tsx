@@ -8,7 +8,7 @@ import styles from './page.module.css';
 const HERO_POSTER = '/toker-hero-poster.webp';
 
 const LOGO_REFERENCES = [
-  { name: "Marshall Boya", logo: "/logos/marshall-boya.png" },
+  { name: "Marshall Boya", logo: "/logos/marshall-boya.webp" },
   { name: "Polisan", logo: "/logos/logo-polisan-home-cosmetics.png" },
   { name: "Dyo", logo: "/logos/dyo.png" },
   { name: "Farplas", logo: "/logos/logo-farplas-black.svg" },
@@ -18,8 +18,8 @@ const LOGO_REFERENCES = [
   { name: "Belgin Madeni Yağlar", logo: "/logos/logo-belgin.png" },
   { name: "Belkim Kimya", logo: "/logos/belkim-logo.png" },
   { name: "Işık Plastik", logo: "/logos/isik-plastik.png" },
-  { name: "Dizayn Mühendislik", logo: "/logos/logo-dizaynmüh.png" },
-  { name: "Deka Teknik", logo: "/logos/ldeka-logo.png" },
+  { name: "Dizayn Mühendislik", logo: "/logos/logo-dizaynmuh.png" },
+  { name: "Deka Teknik", logo: "/logos/deka-logo.webp" },
   { name: "Burgmann Packings", logo: "/logos/bugman-packingslogo.svg" },
   { name: "CMS Makine", logo: "/logos/cms.png" },
   { name: "AkzoNobel", logo: "/logos/logo-akzonobel.webp" }
@@ -29,24 +29,24 @@ const MACHINE_PARKS = [
   {
     category: "CNC Dik İşleme Merkezleri",
     items: [
-      { name: "NEWAY CNC Dik İşleme", image: "/images/cnc-dik-işleme-neway.jpeg", detail: "X:1100 mm / Y:600 mm / Z:600 mm" },
-      { name: "HAAS VF2 CNC İşleme", image: "/images/cnc-dik-işleme-haas.jpeg", detail: "X:800 mm / Y:400 mm / Z:500 mm" }
+      { name: "NEWAY CNC Dik İşleme", image: "/images/cnc-dik-isleme-neway-kart.webp", detail: "X:1100 mm / Y:600 mm / Z:600 mm" },
+      { name: "HAAS VF2 CNC İşleme", image: "/images/cnc-dik-isleme-haas-kart.webp", detail: "X:800 mm / Y:400 mm / Z:500 mm" }
     ]
   },
   {
     category: "Universal Torna Tezgahları",
     items: [
-      { name: "Çap 1200 x 5000 Torna", image: "/images/cap-1200*5000-torna-.jpeg", detail: "Büyük çaplı ve uzun parça işleme" },
-      { name: "Çap 660 x 3000 Torna", image: "/images/cap-600*3000-torna.jpeg", detail: "Universal işleme kapasitesi" }
+      { name: "Çap 1200 x 5000 Torna", image: "/images/cap-1200x5000-torna-kart.webp", detail: "Büyük çaplı ve uzun parça işleme" },
+      { name: "Çap 660 x 3000 Torna", image: "/images/cap-600x3000-torna-kart.webp", detail: "Universal işleme kapasitesi" }
     ]
   },
   {
     category: "Universal Freze, Planya ve Ekipman",
     items: [
-      { name: "Universal Freze Tezgahı", image: "/images/universal-freze-tezgah.jpeg", detail: "Dişli ve kanal açma işlemleri" },
-      { name: "200'lük Dik Planya", image: "/images/dikplanya-200.jpeg", detail: "Hassas kama kanalı açma" },
-      { name: "320'lik Dik Planya", image: "/images/dikplanya-320.jpeg", detail: "Geniş kapasite kama kanalı açma" },
-      { name: "Easy-Laser Kaplin Ayar Cihazı", image: "/images/easylaserkaplin.jpeg", detail: "Profesyonel kaplin ayar ve ölçüm sistemi" }
+      { name: "Universal Freze Tezgahı", image: "/images/universal-freze-tezgah-kart.webp", detail: "Dişli ve kanal açma işlemleri" },
+      { name: "200'lük Dik Planya", image: "/images/dikplanya-200-kart.webp", detail: "Hassas kama kanalı açma" },
+      { name: "320'lik Dik Planya", image: "/images/dikplanya-320-kart.webp", detail: "Geniş kapasite kama kanalı açma" },
+      { name: "Easy-Laser Kaplin Ayar Cihazı", image: "/images/easylaser-kaplin-kart.webp", detail: "Profesyonel kaplin ayar ve ölçüm sistemi" }
     ]
   }
 ];
@@ -106,7 +106,7 @@ export default function Home() {
               <div key={badge.id} className={styles.trustItem}>
                 <div className={styles.symbolWrapper}>
                   <img
-                    src={`/icons/${badge.id}.png`}
+                    src={`/icons/${badge.id}.webp`}
                     alt={badge.title}
                     width={80}
                     height={80}

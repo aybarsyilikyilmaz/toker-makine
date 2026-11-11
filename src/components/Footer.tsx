@@ -21,7 +21,7 @@ export default function Footer() {
       <div className={`container ${styles.footerGrid}`}>
         <div className={styles.colLogo}>
           <div className={styles.logo}>
-            <img src="/toker-logo.png" alt="Toker Teknik Logo" className={styles.logoImage} />
+            <img src="/toker-logo.webp" alt="Toker Teknik Logo" className={styles.logoImage} />
           </div>
           <p className={styles.aboutText}>
             TOKER TEKNİK MAKİNA VE BAKIM HİZMETLERİ LTD.ŞTİ. olarak uzman kadromuz ve geniş makine parkurumuz ile güvenilir çözüm ortağınızız.

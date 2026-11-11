@@ -41,7 +41,7 @@ export default function Navbar() {
         {/* Left Side: Logo only */}
         <div className={styles.navMain}>
           <Link href="/" className={styles.logoLink}>
-            <img src="/toker-logo.png" alt="Toker Teknik Logo" className={styles.logo} />
+            <img src="/toker-logo.webp" alt="Toker Teknik Logo" className={styles.logo} />
           </Link>
         </div>
 

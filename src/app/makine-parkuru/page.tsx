@@ -11,24 +11,24 @@ const MACHINE_PARKS = [
   {
     category: "CNC Dik İşleme Merkezleri",
     items: [
-      { name: "NEWAY CNC Dik İşleme", image: "/images/cnc-dik-işleme-neway.jpeg", detail: "X:1100 mm / Y:600 mm / Z:600 mm" },
-      { name: "HAAS VF2 CNC İşleme", image: "/images/cnc-dik-işleme-haas.jpeg", detail: "X:800 mm / Y:400 mm / Z:500 mm" }
+      { name: "NEWAY CNC Dik İşleme", image: "/images/cnc-dik-isleme-neway.webp", detail: "X:1100 mm / Y:600 mm / Z:600 mm" },
+      { name: "HAAS VF2 CNC İşleme", image: "/images/cnc-dik-isleme-haas.webp", detail: "X:800 mm / Y:400 mm / Z:500 mm" }
     ]
   },
   {
     category: "Universal Torna Tezgahları",
     items: [
-      { name: "Çap 1200 x 5000 Torna", image: "/images/cap-1200*5000-torna-.jpeg", detail: "Büyük çaplı ve uzun parça işleme" },
-      { name: "Çap 660 x 3000 Torna", image: "/images/cap-600*3000-torna.jpeg", detail: "Universal işleme kapasitesi" }
+      { name: "Çap 1200 x 5000 Torna", image: "/images/cap-1200x5000-torna.webp", detail: "Büyük çaplı ve uzun parça işleme" },
+      { name: "Çap 660 x 3000 Torna", image: "/images/cap-600x3000-torna.webp", detail: "Universal işleme kapasitesi" }
     ]
   },
   {
     category: "Universal Freze, Planya ve Ekipman",
     items: [
-      { name: "Universal Freze Tezgahı", image: "/images/universal-freze-tezgah.jpeg", detail: "Dişli ve kanal açma işlemleri" },
-      { name: "200'lük Dik Planya", image: "/images/dikplanya-200.jpeg", detail: "Hassas kama kanalı açma" },
-      { name: "320'lik Dik Planya", image: "/images/dikplanya-320.jpeg", detail: "Geniş kapasite kama kanalı açma" },
-      { name: "Easy-Laser Kaplin Ayar Cihazı", image: "/images/easylaserkaplin.jpeg", detail: "Profesyonel kaplin ayar ve ölçüm sistemi" }
+      { name: "Universal Freze Tezgahı", image: "/images/universal-freze-tezgah.webp", detail: "Dişli ve kanal açma işlemleri" },
+      { name: "200'lük Dik Planya", image: "/images/dikplanya-200.webp", detail: "Hassas kama kanalı açma" },
+      { name: "320'lik Dik Planya", image: "/images/dikplanya-320.webp", detail: "Geniş kapasite kama kanalı açma" },
+      { name: "Easy-Laser Kaplin Ayar Cihazı", image: "/images/easylaser-kaplin.webp", detail: "Profesyonel kaplin ayar ve ölçüm sistemi" }
     ]
   }
 ];
