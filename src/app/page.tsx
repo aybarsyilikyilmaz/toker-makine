@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Makine Parkuru: kategori satırları (solda başlık, sağda 2 sütun kart) */}
-      <section className={`section bg-white ${styles.tightTitle}`}>
+      <section className={`section bg-white ${styles.tightTitle} ${styles.machinesSection}`}>
         <div className="container">
           <div className="section-title">
             <h2 className="text-red">Makine Parkurumuz</h2>
@@ -191,7 +191,7 @@ export default function Home() {
       </section>
 
       {/* Referanslar Section - Updated with Logos and lazy loading */}
-      <section className="section bg-light">
+      <section className={`section bg-light ${styles.tightTitle}`}>
         <div className="container">
           <div className="section-title">
             <h2>Referanslarımız</h2>

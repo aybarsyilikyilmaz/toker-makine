@@ -342,10 +342,6 @@
     line-height: 1.15;
   }
 
-  .tightTitle {
-    padding: 3.5rem 0;
-  }
-
   .tightTitle :global(.section-title) {
     margin-bottom: 2rem;
   }
@@ -389,6 +385,13 @@
 }
 
 /* ===== Makine Parkurumuz ===== */
+/* Mobilde bölümün üst-alt boşluğu (yalnızca bu bölüm) */
+@media (max-width: 768px) {
+  .machinesSection {
+    padding: 3.5rem 0;
+  }
+}
+
 .mGroups {
   border-top: 1px solid #ececec;
 }
